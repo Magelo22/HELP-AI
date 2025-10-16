@@ -1,0 +1,82 @@
+/* Importação da fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*background: linear-gradient(135deg, #001E38, #000000);  cor usada para teste*/
+
+    background-color: #001E38; /* azul escuro */
+    color: #FFFFFF; /* texto branco */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container principal */
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    gap: 50px;
+    flex-direction: row; /* imagem à direita por padrão */
+}
+
+/* Texto */
+.principal .text {
+    flex: 1;
+}
+
+.principal .text p {
+    font-size: 18px;
+    color: #96FAFA; /* azul claro */
+    margin-bottom: 10px;
+}
+
+.principal .text h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFFFFF; /* branco */
+    margin-bottom: 20px;
+}
+
+/* Área de vídeo/imagem */
+.principal .video {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal .video img {
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(150, 250, 250, 0.3); /* brilho azul claro */
+}
+
+/* Seção extra */
+.ultima {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    background: rgba(0, 30, 56, 0.6); /* azul escuro translúcido */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(150, 250, 250, 0.3);
+}
+
+.ultima h2 {
+    color: #96FAFA; /* destaque azul claro */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ultima p {
+    color: #FFFFFF;
+    line-height: 1.5;
+}
