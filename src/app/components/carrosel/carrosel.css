@@ -1,0 +1,246 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #001E38; 
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    gap: 50px;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+/* Texto */
+.principal .text {
+    flex: 1;
+}
+
+.principal .text p {
+    font-size: 18px;
+    color:   #FFFFFF; 
+    margin-bottom: 10px;
+}
+
+.principal .text h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color:  #96FAFA; 
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.principal .video {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal .video img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(150, 250, 250, 0.3);
+}
+
+.ultima {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    background: rgba(0, 30, 56, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(150, 250, 250, 0.3);
+    margin: 40px 5%;
+}
+
+.ultima h2 {
+    color: #96FAFA;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ultima p {
+    color: #FFFFFF;
+    line-height: 1.5;
+}
+
+
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .principal {
+        padding: 50px 5%;
+        gap: 40px;
+    }
+    
+    .principal .text h1 {
+        font-size: 36px;
+    }
+    
+    .principal .text p {
+        font-size: 16px;
+    }
+    
+    .ultima {
+        margin: 30px 5%;
+        padding: 30px;
+    }
+}
+
+/* Tablets pequenos e mobile landscape (600px - 768px) */
+@media screen and (max-width: 768px) {
+    .principal {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+        gap: 30px;
+    }
+    
+    .principal .text h1 {
+        font-size: 32px;
+    }
+    
+    .principal .text p {
+        font-size: 16px;
+    }
+    
+    .principal .video {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .ultima {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px;
+        margin: 30px 5%;
+    }
+}
+
+/* Mobile (480px - 600px) */
+@media screen and (max-width: 600px) {
+    .principal {
+        padding: 30px 4%;
+        gap: 25px;
+    }
+    
+    .principal .text h1 {
+        font-size: 28px;
+    }
+    
+    .principal .text p {
+        font-size: 15px;
+    }
+    
+    .ultima {
+        padding: 20px;
+        margin: 25px 4%;
+        gap: 15px;
+    }
+    
+    .ultima h2 {
+        font-size: 20px;
+    }
+    
+    .ultima p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile pequeno (até 480px) */
+@media screen and (max-width: 480px) {
+    .principal {
+        padding: 20px 3%;
+        gap: 20px;
+    }
+    
+    .principal .text h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .principal .text p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .ultima {
+        padding: 15px;
+        margin: 20px 3%;
+        gap: 12px;
+    }
+    
+    .ultima h2 {
+        font-size: 18px;
+    }
+    
+    .ultima p {
+        font-size: 13px;
+    }
+}
+
+/* Desktop grande (acima de 1200px) */
+@media screen and (min-width: 1200px) {
+    .principal {
+        padding: 80px 10%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .ultima {
+        max-width: 1200px;
+        margin: 60px auto;
+    }
+}
+
+/* Ajustes para telas muito grandes */
+@media screen and (min-width: 1600px) {
+    .principal {
+        padding: 100px 15%;
+    }
+    
+    .principal .text h1 {
+        font-size: 48px;
+    }
+    
+    .principal .text p {
+        font-size: 20px;
+    }
+}
+
+/* Melhorias de acessibilidade e interação */
+@media (hover: hover) {
+    .principal .video img:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+        box-shadow: 0 0 25px rgba(150, 250, 250, 0.5);
+    }
+}
+
+/* Prevenir zoom em inputs em iOS */
+@media screen and (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
