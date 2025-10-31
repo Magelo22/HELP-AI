@@ -1,0 +1,103 @@
+<div class="home-page">
+  <!-- Partículas -->
+  <div class="particles" #particlesContainer></div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <img src="assets/images/Help-IA.png" alt="HELP IA" class="logo">
+    
+    <nav class="desktop-nav">
+      <a href="#" [class.active]="currentSection === 'home'" (click)="navigateTo('home'); $event.preventDefault()">
+        <i class="fas fa-home"></i> Início
+      </a>
+      <a href="#" [class.active]="currentSection === 'about'" (click)="navigateTo('about'); $event.preventDefault()">
+        <i class="fas fa-brain"></i> Sobre IA
+      </a>
+    </nav>
+
+    <button class="menu-toggle" 
+            [class.active]="isMobileMenuOpen"
+            (click)="toggleMobileMenu()" 
+            aria-label="Abrir menu de navegação">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Menu Mobile -->
+  <nav class="nav-menu" [class.active]="isMobileMenuOpen">
+    <ul>
+      <li>
+        <a href="#" 
+           [class.active]="currentSection === 'home'" 
+           (click)="navigateTo('home'); closeMobileMenu(); $event.preventDefault()">
+          <i class="fas fa-home"></i> Início
+        </a>
+      </li>
+      <li>
+        <a href="#" 
+           [class.active]="currentSection === 'about'" 
+           (click)="navigateTo('about'); closeMobileMenu(); $event.preventDefault()">
+          <i class="fas fa-brain"></i> Sobre IA
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal COM EFEITO DE MOUSE -->
+  <main class="container" 
+        (mousemove)="onMouseMove($event)"
+        (mouseleave)="onMouseLeave()"
+        (mouseenter)="onContainerHover(true)"
+        (mouseleave)="onContainerHover(false)">
+    <section class="left-column">
+      <img src="assets/images/Help-IA.png" 
+           alt="HELP IA" 
+           class="logo-big"
+           (mouseenter)="onLogoHover(true)"
+           (mouseleave)="onLogoHover(false)">
+      <p>DESCUBRA O POTENCIAL DA INTELIGÊNCIA ARTIFICIAL E TRANSFORME SEU MUNDO COM TECNOLOGIA AVANÇADA. SOLUÇÕES INOVADORAS PARA UM FUTURO INTELIGENTE.</p>
+    </section>
+
+    <section class="right-column">
+      <div class="image-container"
+           (mouseenter)="onImageHover(true)"
+           (mouseleave)="onImageHover(false)">
+        <img src="assets/images/cerebro.png" 
+             alt="Inteligência Artificial"
+             [class.hovered]="isImageHovered">
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão FAQ -->
+  <button class="faq-btn" 
+          (click)="openFaqModal()" 
+          aria-label="Abrir perguntas frequentes">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Modal FAQ -->
+  <div class="modal-overlay" [class.active]="isFaqModalOpen">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Perguntas Frequentes</h2>
+        <button class="close-modal" 
+                (click)="closeFaqModal()" 
+                aria-label="Fechar modal">&times;</button>
+      </div>
+      <div class="modal-content">
+        <div class="faq-item" *ngFor="let faq of faqItems; let i = index">
+          <div class="faq-question" (click)="toggleFaqAnswer(i)">
+            {{ faq.question }}
+            <i class="fas" [class.fa-chevron-down]="!faq.isOpen" [class.fa-chevron-up]="faq.isOpen"></i>
+          </div>
+          <div class="faq-answer" [class.active]="faq.isOpen">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

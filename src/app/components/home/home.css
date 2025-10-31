@@ -1,0 +1,545 @@
+/* VARIÁVEIS E RESET */
+:root {
+  --primary: #000000;
+  --secondary: #001F36;
+  --accent: #1C5560;
+  --accent-light: #79AE92;
+  --text: #FBFFCD;
+  --gradient: linear-gradient(45deg, #1C5560, #79AE92);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-page {
+  background: var(--primary);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* PARTÍCULAS DE FUNDO */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(121, 174, 146, 0.1);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 31, 54, 0.9);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(121, 174, 146, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  height: 60px;
+  filter: drop-shadow(0 0 10px rgba(28, 85, 96, 0.5));
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.desktop-nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.desktop-nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  background: rgba(121, 174, 146, 0.2);
+  transform: translateY(-2px);
+}
+
+.desktop-nav a:hover::before,
+.desktop-nav a.active::before {
+  opacity: 1;
+}
+
+/* MENU MOBILE */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(28, 85, 96, 0.8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 101;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(28, 85, 96, 0.9);
+  transform: translateY(-2px);
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: var(--secondary);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  transition: right 0.3s ease;
+  padding-top: 80px;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.nav-menu a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-menu a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background: rgba(121, 174, 146, 0.2);
+  transform: translateX(5px);
+}
+
+.nav-menu a:hover::before {
+  opacity: 1;
+}
+
+/* CONTEÚDO PRINCIPAL - COM EFEITO DE MOUSE */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin: 120px auto 50px;
+  padding: 40px;
+  gap: 50px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,31,54,0.6) 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  /* Novas propriedades para o efeito do mouse */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* Efeito de brilho que segue o mouse */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+    rgba(28, 85, 96, 0.4) 0%, 
+    transparent 50%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.container:hover::before {
+  opacity: 1;
+}
+
+/* Efeito de borda brilhante */
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--gradient),
+    transparent 70%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.container:hover::after {
+  opacity: 1;
+}
+
+/* Garantir que o conteúdo fique acima dos efeitos */
+.left-column, .right-column {
+  position: relative;
+  z-index: 3;
+}
+
+.left-column {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-big {
+  max-width: 350px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 15px rgba(28, 85, 96, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.logo-big:hover {
+  transform: scale(1.05);
+}
+
+.left-column p {
+  font-size: 1.2rem;
+  color: var(--accent-light);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+
+.left-column p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  height: 60%;
+  width: 4px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.right-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-container img.hovered {
+  transform: scale(1.05);
+}
+
+/* BOTÃO FAQ */
+.faq-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 50%;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.3rem;
+  box-shadow: 0 5px 15px rgba(28,85,96,0.4);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.faq-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(28,85,96,0.6);
+}
+
+/* MODAL FAQ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--secondary);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transform: translateY(50px);
+  transition: transform 0.5s ease;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(121,174,146,0.3);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--accent-light);
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(121,174,146,0.2);
+  padding-bottom: 15px;
+}
+
+.faq-question {
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s ease;
+  padding: 10px 0;
+}
+
+.faq-question:hover {
+  color: var(--accent-light);
+}
+
+.faq-answer {
+  margin-top: 10px;
+  color: var(--accent-light);
+  line-height: 1.6;
+  display: none;
+  padding: 0 10px;
+}
+
+.faq-answer.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BREADCRUMBS */
+.breadcrumbs {
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  z-index: 5;
+}
+
+.breadcrumbs a {
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.breadcrumbs a:hover {
+  color: var(--text);
+}
+
+.breadcrumbs span {
+  margin: 0 8px;
+  color: var(--accent-light);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .logo-big {
+    max-width: 250px;
+  }
+
+  .left-column p {
+    font-size: 1.1rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .left-column p::before {
+    display: none;
+  }
+
+  .breadcrumbs {
+    top: 70px;
+    left: 20px;
+  }
+}
