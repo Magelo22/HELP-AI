@@ -1,6 +1,36 @@
+/* .color1 { #1f1f20 };
+.color2 { #2b4c7e };
+.color3 { #567ebb };
+.color4 { #606d80 };
+.color5 { #dce0e6 }; */
+
 * {
-    background-color: #001E38;
+    /* background-color: #fafbfc ; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: white;
+    color: black;
 }
+
+.title{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 40px 0;
+    text-align: center;
+    color:   #f8f8f8 ;
+}
+
+/* h2 {
+  color: #001E38;
+  text-align: center;
+  margin-bottom: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 6vw, 1.75rem);
+  background: linear-gradient(135deg, #001E38 0%, #96FAFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.3;
+} */

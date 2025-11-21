@@ -1,0 +1,27 @@
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 350px; /* ajuste conforme necessário */
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  will-change: transform;
+}
+
+/* O app-card deve renderizar um elemento com classe .card interno.
+   Aqui assumimos que o componente app-card define sua largura por CSS ou por style inline.
+   Se preferir fixar aqui, descomente: */
+app-card {
+  flex: 0 0 auto;
+  width: 210px; /* mesmo valor de cardWidth no TS */
+  margin-right: 16px; /* espaçamento entre cards */
+  transition: transform 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+  display: block;
+}

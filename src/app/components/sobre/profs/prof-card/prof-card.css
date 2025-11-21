@@ -1,0 +1,76 @@
+.prof-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  margin-left:50px;
+}
+
+/* Círculo da foto */
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: -20px; /* metade da altura para sobrepor o card */
+  left: 10%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Card de informações */
+.info-card {
+  width: 90%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: -30px;         /* espaço para a foto */
+  padding: 80px 85px 85px;  /* topo para comportar a circle */
+  position: relative;
+  z-index: 1;
+
+  h3 {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #1e4462;
+  }
+
+  p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+/* Hover sutil */
+.prof-card:hover .info-card {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .circle {
+    width: 140px;
+    height: 140px;
+    top: 70px;
+    right: -40px;
+  }
+
+  .info-card {
+    padding-top: 70px;
+    margin-top: 60px;
+  }
+}

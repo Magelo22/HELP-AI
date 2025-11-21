@@ -6,15 +6,9 @@
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
+    width: 95vw;
     font-family: "Poppins", sans-serif;
     padding: 50px 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
 }
 
 .card {
@@ -63,13 +57,13 @@
 }
 
 .slider {
-    width: 100%;
     height: var(--height);
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, #000 15% 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 15% 85%, transparent);
+    mask-image: linear-gradient(to right, #000 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 85%, transparent 100%);
     position: relative;
 }
+
 
 .slider .list {
     display: flex;

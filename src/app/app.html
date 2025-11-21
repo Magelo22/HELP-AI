@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <h1>{{ title() }}</h1>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <h1>{{ title() }}</h1>
-</head>
+  <body>
+    <app-home></app-home>
+    <h1 class="title">O que é HELP-IA?</h1>
+    <app-sobre-n></app-sobre-n>
+    <!-- <app-carrosel></app-carrosel> -->
+    <section>
+      <h1 class="title">Exemplos de I.A. no dia a dia </h1>
+      <app-esquerdo-direito [sectionIndex]="4"></app-esquerdo-direito>
+      <app-esquerdo-direito [sectionIndex]="5"></app-esquerdo-direito>
+      <app-esquerdo-direito [sectionIndex]="6"></app-esquerdo-direito>
+      <app-esquerdo-direito [sectionIndex]="7"></app-esquerdo-direito>
+    </section>
+    <app-area-carrosseis-las></app-area-carrosseis-las>
+    <h1 class="title">IAs em destaque</h1>  
+    <app-prompts-exemplos></app-prompts-exemplos>
+    <h1 class="title">Melhorador de prompt</h1>  
+    <app-prompt-improver></app-prompt-improver>
 
-<body>
-<app-carrosel></app-carrosel>
-<app-area-carrosseis-las></app-area-carrosseis-las>
-<app-prompts-exemplos></app-prompts-exemplos>
-<app-prompt-improver></app-prompt-improver>
-<app-footer></app-footer>
-</body>
+    <section>
+      <h1 class="title">Sobre nós</h1>
+      <app-esquerdo-direito [sectionIndex]="0"></app-esquerdo-direito>
+    </section>
+    <section>
+      <app-prof-list></app-prof-list>
+    </section>
+    <section>
+      <app-carosel></app-carosel>
+    </section>
+    <section>
+      <app-esquerdo-direito [sectionIndex]="1"></app-esquerdo-direito>
+      <app-esquerdo-direito [sectionIndex]="2"></app-esquerdo-direito>
+      <app-esquerdo-direito [sectionIndex]="3"></app-esquerdo-direito>
+    </section>
 
+    <app-footer></app-footer>
+  </body>
 </html>

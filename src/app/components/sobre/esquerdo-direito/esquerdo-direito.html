@@ -1,0 +1,14 @@
+<section class="about-section" *ngIf="sectionData" [ngClass]="{'reverse': isImageLeft}">
+  <div class="about-image">
+    <img [src]="sectionData.rightImage" alt="{{ sectionData.rightTitle }}">
+  </div>
+
+  <div class="about-content">
+    <h2 class="about-title">
+      <span class="dash">—</span> {{ sectionData.leftTitle }}
+    </h2>
+    <p class="about-text">
+      {{ sectionData.leftText }}
+    </p>
+  </div>
+</section>

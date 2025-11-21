@@ -1,0 +1,14 @@
+.prof-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* duas colunas em telas grandes */
+  gap: 40px;
+  width: 90%;
+  padding: 60px 5%;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .prof-section {
+    grid-template-columns: 1fr; /* uma coluna em telas pequenas */
+  }
+}

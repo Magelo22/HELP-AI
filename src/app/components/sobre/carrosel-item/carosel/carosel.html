@@ -1,0 +1,15 @@
+<div class="carousel-wrapper"
+     (mouseenter)="pauseOnHover(true)"
+     (mouseleave)="pauseOnHover(false)">
+  <div class="carousel-track" [style.transform]="'translateX(' + position + 'px)'" 
+       [style.transition]="isHover ? 'none' : 'transform 0.016s linear'">
+    <app-card
+      *ngFor="let card of displayCards; let i = index"
+      [card]="card"
+      [isActive]="isHover && i === hoverIndex"
+      [ngStyle]="getCardStyle(i)"
+      (hoverStart)="onCardHover(i)"
+      (hoverEnd)="onCardLeave()"
+    ></app-card>
+  </div>
+</div>

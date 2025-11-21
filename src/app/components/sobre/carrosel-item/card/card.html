@@ -1,0 +1,18 @@
+<div
+  class="card"
+  [class.active]="isActive" 
+  (mouseenter)="hoverStart.emit()"
+  (mouseleave)="hoverEnd.emit()"
+>
+  <div class="card__inner">
+    <div class="card__front">
+      <img [src]="card.src" [alt]="card.title" />
+    </div>
+    <div class="card__back">
+      <div class="card__content">
+        <p class="card__title">{{ card.title }}</p>
+        <p class="card__description">{{ card.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

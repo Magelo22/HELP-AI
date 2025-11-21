@@ -12,18 +12,6 @@
   box-sizing: border-box;
 }
 
-h2 {
-  color: #001E38;
-  text-align: center;
-  margin-bottom: clamp(24px, 5vw, 32px);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 6vw, 1.75rem);
-  background: linear-gradient(135deg, #001E38 0%, #96FAFA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.3;
-}
 
 .input-wrapper {
   margin-bottom: clamp(16px, 4vw, 24px);
@@ -35,9 +23,9 @@ h2 {
   position: relative;
   background: #FFFFFF;
   border-radius: clamp(12px, 3vw, 16px);
-  box-shadow: 0 4px 20px rgba(0, 30, 56, 0.08);
-  padding: clamp(10px, 2.5vw, 12px);
-  min-height: clamp(60px, 15vw, 70px);
+  box-shadow: 0 4px 20px #001e3814;
+  padding: clamp(10px, 4vw, 20px);
+  min-height: clamp(80px, 20vw, 90px);
   display: flex;
   align-items: flex-end;
   border: 1px solid #e2e8f0;
@@ -63,7 +51,7 @@ h2 {
   max-height: min(200px, 50vh);
   overflow-y: auto;
   background: transparent;
-  color: #001E38;
+  color:  #1f1f20 ;
 }
 
 .prompt-textarea:focus {
