@@ -1,137 +1,300 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help-IA Dashboard</title>
-    <link rel="stylesheet" href="style.css"/> 
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="destaque.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon"> </span>
-                        <span class="title"> Help-IA</span>
-                    </a>
-                </li>
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"> </span>
+              <span class="title"> Help-IA</span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="#" onclick="loadPage('./inicio/inicio.html'); return false;">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Início</span>
-                    </a>
-                </li>
+          <li>
+            <a href="#content">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Início</span>
+            </a>
+          </li>
+          <li>
+            <a href="/destaques/destaques.html">
+              <span class="icon">
+                <ion-icon name="star-outline"></ion-icon>
+              </span>
+              <span class="title">IAs em destaque</span>
+            </a>
+          </li>
+          <li>
+            <a href="/prompts/prompts.html">
+              <span class="icon">
+                <ion-icon name="code-working-outline"></ion-icon>
+              </span>
+              <span class="title">Melhores prompts</span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="#" onclick="loadPage('./destaques/destaques.html'); return false;">
-                        <span class="icon">
-                            <ion-icon name="star-outline"></ion-icon>
-                        </span>
-                        <span class="title">IAs em destaque</span>
-                    </a>
-                </li>
+          <li>
+            <a href="/sobre/sobre.html">
+              <span class="icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </span>
+              <span class="title">Sobre nós</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-                <li>
-                    <a href="#" onclick="loadPage('./prompts/prompts.html'); return false;">
-                        <span class="icon">
-                            <ion-icon name="code-working-outline"></ion-icon>
-                        </span>
-                        <span class="title">Melhores prompts</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" onclick="loadPage('./sobre/sobre.html'); return false;">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sobre nós</span>
-                    </a>
-                </li>
-            </ul>
+      <div class="main">
+        <div class="topbar">
+          <div class="menu">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <div class="theme-toggle">
+            <label class="switch">
+              <input checked="" type="checkbox" class="toggle" />
+              <span class="slider"></span>
+              <span class="card-side"></span>
+            </label>
+          </div>
         </div>
+        <section id="content">
+          <div id="home">
+            <div class="shape"></div>
+            <div id="cta">
+              <h1 class="title">
+                Seu Portal para o <span> Futuro</span> Inteligente
+              </h1>
+              <p class="description">
+                O <strong>HELP IA</strong> é um projeto focado em desmistificar
+                a Inteligência Artificial. A nossa missão é mostrar, com
+                exemplos reais, como esta tecnologia já pode ser uma ferramenta
+                poderosa no seu dia a dia.
+              </p>
 
-        <div class="main">
-            <div class="topbar">
-                <div class="menu">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-                <div class="theme-toggle">
-                    <label class="switch">
-                        <input checked="" type="checkbox" class="toggle" />
-                        <span class="slider"></span>
-                        <span class="card-side"></span>
-                    </label>
-                </div>
+              <div id="cta_buttons">
+                <a href="#" class="btn-default"> Perguntas frequentes </a>
+              </div>
+
+              <div class="social-media-buttons">
+                <a href="">
+                  <ion-icon name="logo-tiktok"></ion-icon>
+                </a>
+                <a href="">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </div>
             </div>
 
-            <div id="page-content">
-
+            <div id="banner">
+              <img src="/public/download (1).png" alt="" />
             </div>
-        </div>
+          </div>
+          <section class="sobre-section">
+            <div class="sobre-divider"></div>
+
+            <h3 class="examples-title">
+              A IA na sua Rotina: Exemplos Práticos
+            </h3>
+
+            <div class="detailed-examples-grid">
+              <div class="example-card">
+                <div class="example-icon">
+                  <ion-icon name="fast-food-outline"></ion-icon>
+                </div>
+                <div class="example-card-content card-yellow">
+                  <h4 class="example-card-title">Planear o seu Jantar</h4>
+                  <p class="example-card-desc">
+                    Abra uma IA e diga: "Tenho frango, arroz e brócolos no
+                    frigorífico. Dá-me 3 ideias rápidas para um jantar saboroso
+                    com estes ingredientes?"
+                  </p>
+                </div>
+              </div>
+
+              <div class="example-card">
+                <div class="example-icon">
+                  <ion-icon name="airplane-outline"></ion-icon>
+                </div>
+                <div class="example-card-content card-blue">
+                  <h4 class="example-card-title">Criar um Roteiro de Viagem</h4>
+                  <p class="example-card-desc">
+                    Peça: "Vou ao Porto por 3 dias. Quero focar-me em cultura e
+                    boa comida. Monte um roteiro dia a dia para mim, incluindo
+                    sugestões de restaurantes."
+                  </p>
+                </div>
+              </div>
+
+              <div class="example-card">
+                <div class="example-icon">
+                  <ion-icon name="document-text-outline"></ion-icon>
+                </div>
+                <div class="example-card-content card-green">
+                  <h4 class="example-card-title">E-mails Difíceis</h4>
+                  <p class="example-card-desc">
+                    Solicite: "Preciso de pedir ao meu chefe para trabalhar
+                    remotamente às sextas. Escreva um e-mail profissional e
+                    educado a explicar os motivos."
+                  </p>
+                </div>
+              </div>
+
+              <div class="example-card">
+                <div class="example-icon">
+                  <ion-icon name="desktop-outline"></ion-icon>
+                </div>
+                <div class="example-card-content card-purple">
+                  <h4 class="example-card-title">Netflix</h4>
+                  <p class="example-card-desc">
+                    A IA analisa histórico para recomendar filmes ideais.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example-card">
+                <div class="example-icon">
+                  <ion-icon name="id-card-outline"></ion-icon>
+                </div>
+                <div class="example-card-content card-purple2">
+                  <h4 class="example-card-title">Assistentes virtuais</h4>
+                  <p class="example-card-desc">
+                    Usam redes neurais para entender voz e texto.
+                  </p>
+                </div>
+              </div>
+
+              <div class="example-card">
+                <div class="example-icon">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </div>
+                <div class="example-card-content card-red">
+                  <h4 class="example-card-title">Redes sociais</h4>
+                  <p class="example-card-desc">
+                    IA personaliza o feed e recomenda conteúdos relevantes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <footer class="footer_area">
+          <div class="container-footer">
+            <div class="row">
+              <!-- Coluna 1 -->
+              <div class="footer_col">
+                <p>
+                  <b
+                    >Nosso site é criativo, moderno e responsivo para qualquer
+                    dispositivo.</b
+                  >
+                </p>
+                <div class="copywrite">
+                  <p>
+                    Feito por <a href="#"><b>HELP-IA</b></a>
+                  </p>
+                </div>
+                <div class="footer_social_area">
+                  <a
+                    href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+
+              <!-- Coluna 2 -->
+              <div class="footer_col">
+                <h5 class="widget-title"><b>Sobre</b></h5>
+                <ul class="footer_menu">
+                  <li><a href="#">Culminância</a></li>
+                  <li><a href="#">Quem somos</a></li>
+                  <li><a href="#">Help-IA</a></li>
+                  <li><a href="#">Comunidade</a></li>
+                </ul>
+              </div>
+
+              <!-- Coluna 3 -->
+              <div class="footer_col">
+                <h5 class="widget-title"><b>Navegação</b></h5>
+                <ul class="footer_menu">
+                  <li><a href="#">Início</a></li>
+                  <li><a href="#">Ias em destaque</a></li>
+                  <li><a href="#">Melhores prompts</a></li>
+                  <li><a href="#">Sobre nós</a></li>
+                </ul>
+              </div>
+
+              <!-- Coluna 4 -->
+              <div class="footer_col">
+                <h5 class="widget-title"><b>Contato</b></h5>
+                <ul class="footer_menu">
+                  <li>
+                    <a
+                      href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                      >Instagram</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g"
+                      >Tik Tok</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script>
-        function loadPage(pageUrl) {
-            fetch(pageUrl)
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error("Página não encontrada: " + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then((html) => {
-                    document.getElementById("page-content").innerHTML = html;
-                })
-                .catch((err) => console.error("Erro ao carregar a página: ", err));
-        }
+      let list = document.querySelectorAll(".navigation li");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
 
+      let toggle = document.querySelector(".menu");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
 
-        let list = document.querySelectorAll(".navigation li");
+      toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      };
 
-        function activeLink() {
-            list.forEach((item) => {
-                item.classList.remove("hovered");
-            });
-            this.classList.add("hovered");
-        }
-
-        list.forEach((item) => item.addEventListener("mouseover", activeLink));
-
-        let toggle = document.querySelector(".menu");
-        let navigation = document.querySelector(".navigation");
-        let main = document.querySelector(".main");
-
-        toggle.onclick = function () {
-            navigation.classList.toggle("active");
-            main.classList.toggle("active");
-        };
-
-        const themeToggle = document.querySelector(".toggle");
-
-        function applyTheme() {
-            if (themeToggle.checked) {
-                document.body.classList.add("light");
-            } else {
-                document.body.classList.remove("light");
-            }
-        }
-
-        applyTheme();
-
-        themeToggle.addEventListener("change", applyTheme);
-        
-        document.addEventListener('DOMContentLoaded', (event) => {
-            loadPage('./inicio/inicio.html'); 
-        });
+      const themeToggle = document.querySelector(".toggle");
+      function applyTheme() {
+        if (themeToggle.checked) document.body.classList.add("light");
+        else document.body.classList.remove("light");
+      }
+      applyTheme();
+      themeToggle.addEventListener("change", applyTheme);
     </script>
-</body>
+  </body>
 </html>

@@ -308,202 +308,125 @@ body {
   background-color: var(--blue-c);
 }
 
-#home {
+.container-cards {
   display: flex;
-  min-height: calc(100vh - 50px);
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card-info {
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #6a2c70;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.info p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Carrossel de alunos */
+.carousel-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  width: 99%;
+  perspective: 1000px;
+  padding: 20px 0;
+  margin-left: 10px;
+}
+
+.card-alunos {
+  width: 200px;
+  height: 250px;
+  flex: 0 0 auto;
+  perspective: 1000px;
+  transition: filter 0.3s;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
   position: relative;
-  margin: 0px 10px 0px 40px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
 }
 
-#cta {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  margin-top: 5%;
+.card-alunos:hover .card-inner {
+  transform: rotateY(180deg);
 }
 
-#cta .title {
-  font-size: 2.8rem;
-  color: var(--font-bg);
-}
-
-#cta .title span {
-  color: var(--blue);
-}
-
-#cta .description {
-  font-size: 1.2rem;
-  color: var(--font-bg);
-}
-
-#cta_buttons {
-  display: flex;
-  gap: 24px;
-}
-
-#cta_buttons a {
-  text-decoration: none;
-  color: var(--fonts-bg);
-}
-
-.social-media-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.social-media-buttons a {
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--fonts-bg);
-  font-size: 1.25rem;
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--blue-c);
-  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.081);
-  transition: box-shadow 0.3s ease;
-}
-
-.social-media-buttons a:hover {
-  box-shadow: 0px 0px 10px 2px rgba(48, 84, 204, 0.571);
-}
-
-#banner {
-  display: flex;
-  align-items: start;
-  justify-content: end;
-  width: 40%;
-  margin-left: 25%;
-}
-
-#banner img {
-  width: 85%;
-  width: fit-content;
-  padding-top: 80px;
-  z-index: 2;
-}
-
-.shape {
-  background-color: var(--blue-banner);
-  position: absolute;
-  width: 48%;
-  height: 90%;
-  border-radius: 40% 30% 0% 30%;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  transition: 0.5s;
-}
-
-.main.active #page-content .shape {
-  width: 45%;
-  transition: 0.5s;
-}
-
-.sobre-section {
-  height: 100vh;
-}
-
-.sobre-section {
-  width: 90%;
-  max-width: 1200px;
-  height: 80vh;
-  margin: 40px auto 10px auto;
-  padding: 10px 0;
-  background: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  text-align: center;
-  z-index: 1;
-}
-
-.examples-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 50px;
-  color: var(--font-bg);
-}
-
-.detailed-examples-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-}
-
-.example-card {
-  background: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.example-card:hover {
-  transform: translateY(-6px);
-}
-
-/* Parte superior (ícone com fundo branco) */
-.example-icon {
-  font-size: 2.4rem;
-  padding: 40px 0 20px;
-  color: #0b1a3a;
+  font-size: 16px;
+  color: #fff;
   text-align: center;
 }
 
-/* Parte inferior colorida */
-.example-card-content {
-  padding: 20px 10px;
-  color: #0b1a3a;
+.card-front {
+  background-color: #6a2c70;
 }
 
-/* Título */
-.example-card-title {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-weight: 700;
+.card-back {
+  background-color: #f08a5d;
+  transform: rotateY(180deg);
 }
 
-/* Texto */
-.example-card-desc {
-  font-size: 1rem;
-  line-height: 1.5;
+.blurred {
+  filter: blur(4px);
 }
 
-/* Cores individuais igual ao estilo Font Awesome */
-.card-yellow {
-  background-color: #f7d44c;
-}
-.card-blue {
-  background-color: #6bb7ff;
-}
-.card-green {
-  background-color: #69d3b2;
-}
-.card-purple {
-  background-color: #d7a8ff;
-}
-.card-purple2 {
-  background-color: #c79bff;
-}
-.card-red {
-  background-color: #ff9991;
+.carousel-wrapper.paused {
+  scroll-behavior: auto;
 }
 
 
 
-/* ===========================
-   FOOTER ESTILIZADO
-=========================== */
-
-/* Wrapper opcional para isolar o footer */
 .footer_area {
   background-color: #182a45; /* Azul escuro */
   color: white;
