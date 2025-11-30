@@ -28,7 +28,7 @@
   min-height: clamp(80px, 20vw, 90px);
   display: flex;
   align-items: flex-end;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #1f1f20;
   transition: all 0.3s ease;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .prompt-textarea::placeholder {
-  color: #a0aec0;
+  color: #1f1f20;
   font-size: clamp(13px, 3vw, 14px);
 }
 

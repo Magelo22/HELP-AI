@@ -1,4 +1,5 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,20 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./home.css']
 })
 export class Home implements OnInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {}
 
   ngOnInit(): void {
     this.initializePage();
   }
 
   initializePage(): void {
-    // Loader
-    const loader = document.getElementById('loader');
-    loader?.classList.add('active');
-    setTimeout(() => loader?.classList.remove('active'), 1500);
+    // Verifica se está no browser (não no servidor)
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
 
     // Partículas de fundo
     const particlesContainer = document.getElementById('particles');
@@ -146,11 +150,7 @@ export class Home implements OnInit {
     shareButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
-        loader?.classList.add('active');
-        setTimeout(() => {
-          loader?.classList.remove('active');
-          alert('Conteúdo compartilhado com sucesso!');
-        }, 1000);
+        alert('Conteúdo compartilhado com sucesso!');
       });
     });
 

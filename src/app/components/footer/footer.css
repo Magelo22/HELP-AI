@@ -5,15 +5,14 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #001E38; /* azul escuro de fundo */
-    color: #FFFFFF; /* texto branco */
+    background-color: white; 
+    color: white; 
 }
 
 /* Rodapé */
 .footer_area {
-    background: linear-gradient(135deg, #001E38, #000000);
-   /* background-color: #001E38;  teste de cor /* azul escuro */
-    color: #FFFFFF; /* texto branco */
+    background: #2b4c7e;
+    color: white; 
     padding: 60px 20px;
 }
 
@@ -36,7 +35,7 @@ body {
 /* Títulos */
 .widget-title {
     margin-bottom: 15px;
-    color: #96FAFA; /* azul claro */
+    color: white; /* azul claro */
     font-size: 18px;
     font-weight: 600;
 }
@@ -53,13 +52,13 @@ body {
 }
 
 .footer_menu li a {
-    color: #FFFFFF; /* branco */
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer_menu li a:hover {
-    color: #96FAFA; /* azul claro no hover */
+    color: #567ebb; /* azul claro no hover */
 }
 
 /* Copywrite */
@@ -67,17 +66,17 @@ body {
     margin: 15px 0;
     font-size: 14px;
     text-align: center;
-    color: #FFFFFF;
+    color: white;
 }
 
 .copywrite a {
-    color: #96FAFA;
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .copywrite a:hover {
-    color: #FFFFFF;
+    color: #567ebb;
 }
 
 /* Redes sociais */
@@ -87,8 +86,8 @@ body {
     height: 40px;
     margin-right: 10px;
     border-radius: 50%;
-    background-color:   #001E38; /* fundo azul claro */
-    color: #96FAFA; /* ícones escuros */
+    background-color:   white; /* fundo azul claro */
+    color: black; /* ícones escuros */
     text-align: center;
     line-height: 40px;
     font-size: 18px;
@@ -96,6 +95,6 @@ body {
 }
 
 .footer_social_area a:hover {
-    background-color: #FFFFFF; /* fundo branco */
-    color: #001E38; /* ícones escuros */
+    background-color: #567ebb; /* fundo branco */
+    color: black; /* ícones escuros */
 }

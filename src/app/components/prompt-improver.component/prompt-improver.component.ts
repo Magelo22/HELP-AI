@@ -23,6 +23,8 @@ export class PromptImproverComponent {
   isDragging: boolean = false;
   dragOffset = { x: 0, y: 0 };
 
+  
+  
   constructor(private geminiService: GeminiService) { }
 
   improvePrompt(): void {

@@ -40,10 +40,10 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 20px;
-      color:   #eeeeee ;
+      color:   #1f1f20 ;
 
       .dash {
-        color: #0098ff;
+        color: #567ebb;
         margin-right: 6px;
       }
     }
@@ -51,7 +51,7 @@
     .about-text {
       font-size: 1.1rem;
       line-height: 1.7;
-      color:   #ffffff ;
+      color:   #1f1f20 ;
       text-align: justify;
     }
   }

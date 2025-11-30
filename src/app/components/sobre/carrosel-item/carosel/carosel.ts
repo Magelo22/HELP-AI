@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { Card } from "../card/card";
 import { CommonModule } from '@angular/common';
 import { ICard } from '../../../../interfaces/card-user.interface';
 import { CardsService } from '../../../../services/card-user.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-carosel',
@@ -20,8 +21,14 @@ export class Carosel implements OnInit, OnDestroy {
   hoverIndex: number | null = null;
   rafId?: number;
   speed = 1.5;                 // pixels por frame (~60fps) — ajuste para velocidade desejada
+  private isBrowser: boolean;
 
-  constructor(private cardsService: CardsService) {}
+  constructor(
+    private cardsService: CardsService,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit() {
     this.cards = this.cardsService.getCards() || [];
@@ -29,12 +36,14 @@ export class Carosel implements OnInit, OnDestroy {
 
     // duplicar pelo menos 2x; podemos duplicar mais para telas maiores
     // a cópia deve ter comprimento >= 2x para permitir o reset sem quebras
-    this.displayCards = [...this.cards, ...this.cards,...this.cards,...this.cards];
+    this.displayCards = [...this.cards, ...this.cards, ...this.cards, ...this.cards];
 
     // posição inicial 0 (mostra o primeiro item do displayCards)
     // se quiser começar centrando parte do conjunto, ajuste position aqui
 
-    this.startAutoScroll();
+    if (this.isBrowser) {
+      this.startAutoScroll();
+    }
   }
 
   ngOnDestroy() {
@@ -43,6 +52,8 @@ export class Carosel implements OnInit, OnDestroy {
 
   // inicio do loop usando requestAnimationFrame para suavidade
   startAutoScroll() {
+    if (!this.isBrowser) return;
+
     const step = () => {
       if (!this.isHover) {
         this.position -= this.speed;
@@ -64,7 +75,7 @@ export class Carosel implements OnInit, OnDestroy {
   }
 
   stopAutoScroll() {
-    if (this.rafId) {
+    if (this.rafId && this.isBrowser) {
       cancelAnimationFrame(this.rafId);
       this.rafId = undefined;
     }
