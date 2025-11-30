@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help-IA Dashboard</title>
-    <link rel="stylesheet" href="stule.css" /> 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css"/> 
 </head>
 <body>
 
@@ -21,7 +19,7 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="loadPage('/inicio/inicio.html'); return false;">
+                    <a href="#" onclick="loadPage('./inicio/inicio.html'); return false;">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -30,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="loadPage('/destaques/destaques.html'); return false;">
+                    <a href="#" onclick="loadPage('./destaques/destaques.html'); return false;">
                         <span class="icon">
                             <ion-icon name="star-outline"></ion-icon>
                         </span>
@@ -39,7 +37,7 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="loadPage('prompts/prompts.html'); return false;">
+                    <a href="#" onclick="loadPage('./prompts/prompts.html'); return false;">
                         <span class="icon">
                             <ion-icon name="code-working-outline"></ion-icon>
                         </span>
@@ -48,7 +46,7 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="loadPage('sobre/sobre.html'); return false;">
+                    <a href="#" onclick="loadPage('./sobre/sobre.html'); return false;">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -77,6 +75,9 @@
             </div>
         </div>
     </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script>
         function loadPage(pageUrl) {
@@ -127,9 +128,9 @@
         applyTheme();
 
         themeToggle.addEventListener("change", applyTheme);
-
+        
         document.addEventListener('DOMContentLoaded', (event) => {
-            loadPage('/inicio/inicio.html'); 
+            loadPage('./inicio/inicio.html'); 
         });
     </script>
 </body>
