@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help-IA Dashboard</title>
+    <link rel="stylesheet" href="stule.css" /> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"> </span>
+                        <span class="title"> Help-IA</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="loadPage('/inicio/inicio.html'); return false;">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Início</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="loadPage('/destaques/destaques.html'); return false;">
+                        <span class="icon">
+                            <ion-icon name="star-outline"></ion-icon>
+                        </span>
+                        <span class="title">IAs em destaque</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="loadPage('prompts/prompts.html'); return false;">
+                        <span class="icon">
+                            <ion-icon name="code-working-outline"></ion-icon>
+                        </span>
+                        <span class="title">Melhores prompts</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="loadPage('sobre/sobre.html'); return false;">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sobre nós</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="theme-toggle">
+                    <label class="switch">
+                        <input checked="" type="checkbox" class="toggle" />
+                        <span class="slider"></span>
+                        <span class="card-side"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="page-content">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadPage(pageUrl) {
+            fetch(pageUrl)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Página não encontrada: " + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then((html) => {
+                    document.getElementById("page-content").innerHTML = html;
+                })
+                .catch((err) => console.error("Erro ao carregar a página: ", err));
+        }
+
+
+        let list = document.querySelectorAll(".navigation li");
+
+        function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+
+        list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+        let toggle = document.querySelector(".menu");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+
+        toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+        };
+
+        const themeToggle = document.querySelector(".toggle");
+
+        function applyTheme() {
+            if (themeToggle.checked) {
+                document.body.classList.add("light");
+            } else {
+                document.body.classList.remove("light");
+            }
+        }
+
+        applyTheme();
+
+        themeToggle.addEventListener("change", applyTheme);
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            loadPage('/inicio/inicio.html'); 
+        });
+    </script>
+</body>
+</html>
