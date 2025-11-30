@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help-IA</title>
+  </head>
+  <body>
+    <div class="prompt-improver-container">
+      <div class="input-wrapper">
+        <div class="text-input-container">
+          <textarea
+            id="originalPrompt"
+            placeholder="Deixe-me ajudar a refinar o seu prompt. Qual é a sua ideia?"
+            class="prompt-textarea"
+          ></textarea>
+
+          <div id="loading" class="inline-loading hidden">
+            <div class="jumping-dots-loader">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+
+          <div class="input-actions">
+            <button id="resetBtn" class="reset-btn" title="Limpar">🗑️</button>
+
+            <button id="improveBtn" class="improve-btn" title="Melhorar Prompt">
+              ⬆️
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="backdrop" class="backdrop-blur hidden"></div>
+
+      <div id="floatingBox" class="centered-prompt-container hidden">
+        <div class="prompt-card">
+          <div class="prompt-header" id="dragHandle">
+            <div class="header-icon">✔️</div>
+            <div class="header-text">
+              <h3>Prompt Otimizado</h3>
+              <p>Seu prompt foi aprimorado com a metodologia STAR</p>
+            </div>
+            <button id="closeBtn" class="close-btn">❌</button>
+          </div>
+
+          <div class="prompt-content">
+            <div class="prompt-text">
+              <pre id="improvedText"></pre>
+            </div>
+
+            <div class="prompt-actions">
+              <button class="copy-btn" id="copyBtn">
+                <span class="copy-icon">📋</span> Copiar Prompt
+              </button>
+
+              <div class="prompt-stats">
+                <span class="stat-badge methodology">STAR</span>
+                <span id="charCount" class="stat-badge chars"
+                  >0 caracteres</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---------------------------
+      //  CONFIGURAÇÃO GERAL
+      // ---------------------------
+      const API_KEY = "AIzaSyBsfZpBxx55aGFz0Bw2BvdAPWvNHh65T_w";
+      const API_URL =
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
+
+      const improveBtn = document.getElementById("improveBtn");
+      const resetBtn = document.getElementById("resetBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const originalPromptInput = document.getElementById("originalPrompt");
+
+      const floatingBox = document.getElementById("floatingBox");
+      const backdrop = document.getElementById("backdrop");
+      const improvedText = document.getElementById("improvedText");
+      const loading = document.getElementById("loading");
+      const charCount = document.getElementById("charCount");
+
+      let isDragging = false;
+      let dragOffset = { x: 0, y: 0 };
+
+      // ---------------------------
+      //  IMPROVE PROMPT
+      // ---------------------------
+      async function improvePrompt() {
+        const userPrompt = originalPromptInput.value.trim();
+        if (!userPrompt) return;
+
+        loading.classList.remove("hidden");
+        floatingBox.classList.add("hidden");
+        backdrop.classList.add("hidden");
+        improvedText.textContent = "";
+
+        const body = {
+          contents: [
+            {
+              parts: [
+                {
+                  text: createImprovementPrompt(userPrompt),
+                },
+              ],
+            },
+          ],
+          safetySettings: [
+            {
+              category: "HARM_CATEGORY_HARASSMENT",
+              threshold: "BLOCK_MEDIUM_AND_ABOVE",
+            },
+            {
+              category: "HARM_CATEGORY_HATE_SPEECH",
+              threshold: "BLOCK_MEDIUM_AND_ABOVE",
+            },
+          ],
+          generationConfig: {
+            temperature: 0.7,
+            topP: 0.8,
+            topK: 40,
+            maxOutputTokens: 2048,
+          },
+        };
+
+        try {
+          const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          });
+
+          const data = await response.json();
+          console.log("API RESPONSE:", data);
+
+          const result =
+            data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+            data?.contents?.[0]?.parts?.[0]?.text ||
+            data?.text ||
+            "";
+
+          if (!result) {
+            improvedText.textContent = "Erro: resposta vazia da API.";
+            return;
+          }
+
+          improvedText.textContent = result;
+          charCount.textContent = `${result.length} caracteres`;
+
+          floatingBox.classList.remove("hidden");
+          backdrop.classList.remove("hidden");
+        } catch (err) {
+          console.error("API ERROR:", err);
+          improvedText.textContent = "Erro ao processar sua solicitação.";
+        }
+
+        loading.classList.add("hidden");
+      }
+
+      // ---------------------------
+      //  CRIA PROMPT STAR
+      // ---------------------------
+      function createImprovementPrompt(original) {
+        return `SEU PAPEL: Você é um especialista em melhorar prompts usando a metodologia STAR (Situação, Tarefa, Ação, Resultado).
+
+  INSTRUÇÃO: Melhore o prompt abaixo aplicando a metodologia STAR. NÃO execute o prompt, apenas o reformule seguindo a estrutura STAR.
+
+  PROMPT ORIGINAL: "${original}"
+
+  ESTRUTURA STAR QUE DEVE SER SEGUIDA:
+  - SITUAÇÃO: Contexto ou cenário
+  - TAREFA: Objetivo específico
+  - AÇÃO: Passos ou abordagem
+  - RESULTADO: Resultado esperado
+
+  REGRAS:
+  1. Mantenha o propósito original do prompt
+  2. Apenas reformule seguindo STAR
+  3. Não adicione explicações
+  4. Não execute o prompt
+  5. Retorne apenas o prompt melhorado
+
+  RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
+      }
+
+      // ---------------------------
+      //  BOTÕES
+      // ---------------------------
+      improveBtn.addEventListener("click", improvePrompt);
+
+      resetBtn.addEventListener("click", () => {
+        originalPromptInput.value = "";
+        floatingBox.classList.add("hidden");
+        backdrop.classList.add("hidden");
+      });
+
+      copyBtn?.addEventListener("click", () => {
+        navigator.clipboard.writeText(improvedText.textContent);
+      });
+
+      closeBtn?.addEventListener("click", () => {
+        floatingBox.classList.add("hidden");
+        backdrop.classList.add("hidden");
+      });
+
+      // ---------------------------
+      //  ARRRASTAR MODAL
+      // ---------------------------
+      document
+        .getElementById("dragHandle")
+        .addEventListener("mousedown", (e) => {
+          isDragging = true;
+          dragOffset.x = e.clientX - floatingBox.offsetLeft;
+          dragOffset.y = e.clientY - floatingBox.offsetTop;
+        });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        floatingBox.style.left = `${e.clientX - dragOffset.x}px`;
+        floatingBox.style.top = `${e.clientY - dragOffset.y}px`;
+      });
+
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+      });
+
+      // ---------------------------
+      //  AUTO RESIZE
+      // ---------------------------
+      originalPromptInput.addEventListener("input", () => {
+        originalPromptInput.style.height = "auto";
+        originalPromptInput.style.height =
+          Math.min(originalPromptInput.scrollHeight, 200) + "px";
+      });
+    </script>
+  </body>
+</html>
