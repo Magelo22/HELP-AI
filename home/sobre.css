@@ -24,6 +24,7 @@
   --font-bg: #ffffff;
   --blue-c--off: #2b4c7e;
   --blue-c--off-hover: #ffffff;
+  --font: white;
 
   --fade-left: #000000;
   --fade-mid: #4da3ff;
@@ -37,6 +38,7 @@ body.light {
   --main-bg: transparent;
   --background-bg: #ffffff;
   --font-bg: #1f1f20;
+  --font: black;
   --blue-c--off: #5a7397;
   --blue-banner: #2b4c7e;
 
@@ -310,7 +312,7 @@ body {
 
 .container-cards {
   display: flex;
-  gap: 40px;
+  gap: 60px;
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
@@ -321,7 +323,7 @@ body {
   background-color: #f8f8f8;
   border-radius: 15px;
   padding: 20px;
-  width: 250px;
+  width: 400px;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -340,7 +342,7 @@ body {
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #6a2c70;
+  border: 3px solid #2b4c7e;
 }
 
 .avatar img {
@@ -409,16 +411,16 @@ body {
 }
 
 .card-front {
-  background-color: #6a2c70;
+  background-color: #2b4c7e;
 }
 
 .card-back {
-  background-color: #f08a5d;
+  background-color: #182a45;
   transform: rotateY(180deg);
 }
 
 .blurred {
-  filter: blur(4px);
+  filter: blur(4px); 
 }
 
 .carousel-wrapper.paused {
@@ -535,5 +537,63 @@ body {
   }
 }
 
+/* SECTION SOBRE */
+/* SECTION SOBRE — 50% / 50% */
+.sobre-section {
+  margin: 20px auto;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 15px;
+  gap: 40px;
+  color: var(--font);
+}
 
- 
+/* Cada parte ocupa 50% */
+.sobre-img,
+.sobre-content {
+  flex: 1; /* Ocupa metade */
+}
+
+/* Imagem 100% dentro dos 50% */
+.sobre-img img {
+  width: 20%;
+  height: 10%;
+  border-radius: 15px;
+  margin-left: 40%;
+}
+
+
+
+.sobre-content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.sobre-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .sobre-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-img,
+  .sobre-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .sobre-img img {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
