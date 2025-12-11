@@ -640,7 +640,7 @@
       let scrollAmount = 0;
       function autoScroll() {
         if (!wrapper.classList.contains("paused")) {
-          scrollAmount += 1;
+          scrollAmount += 2.2;
           if (scrollAmount >= wrapper.scrollWidth / 2) scrollAmount = 0;
           wrapper.scrollLeft = scrollAmount;
         }
