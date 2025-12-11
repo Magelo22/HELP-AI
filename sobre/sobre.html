@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help-IA</title>
+  <link rel="stylesheet" href="/sobre.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="icon" href="/public/help-ai.jpeg" type="image/png" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+      <div class="menu-close-btn" id="menuCloseBtn">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <img src="/public/help-ia-removebg-preview.png" alt="" id="img-help" />
+            </span>
+            <span class="title"> Help-IA</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/index.html">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="title">Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="/destaques/destaques.html">
+            <span class="icon">
+              <ion-icon name="bookmarks-outline"></ion-icon>
+            </span>
+            <span class="title">IAs em destaque</span>
+          </a>
+        </li>
+        <li>
+          <a href="/metodologia/star.html">
+            <span class="icon">
+              <ion-icon name="star-outline"></ion-icon>
+            </span>
+            <span class="title">Metodologia STAR</span>
+          </a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/prompts/prompts.html">
+            <span class="icon">
+              <ion-icon name="code-working-outline"></ion-icon>
+            </span>
+            <span class="title">Melhores prompts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/sobre/sobre.html">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">Sobre nós</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>HelpAi - Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <img src="/public/help-ai.jpeg" alt="Logo da HelpAI" />
+          <p> Olá, bem vindo ao chatbot da HelpAi<br />Como posso te ajudar?
+          </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Envie uma mensagem..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined"> send</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input checked="" type="checkbox" class="toggle" />
+            <span class="slider"></span>
+            <span class="card-side"></span>
+          </label>
+        </div>
+      </div>
+
+      <section class="sobre-section">
+        <div class="sobre-img">
+          <img src="/public/help-ia-removebg-preview.png" id="logo" alt="Equipe Help-IA" />
+        </div>
+
+        <div class="sobre-content">
+          <h2>Sobre a Nossa Jornada</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Help-IA nasceu com o propósito de
+            aproximar alunos e comunidade do universo da Inteligência
+            Artificial, promovendo conhecimento, criatividade e inclusão
+            digital. Nossa equipe trabalha unida para transformar ideias em
+            realidade, desenvolvendo ferramentas, conteúdos e experiências
+            únicas.
+          </p>
+        </div>
+      </section>
+
+      <h1 style="text-align: center; margin-top: 20px; color: var(--font)">
+        Nossa Equipe
+      </h1>
+
+      <!-- Cards de avatar -->
+      <div class="container-cards">
+        <div class="card-info">
+          <div class="avatar">
+            <img src="/public/maria.jpeg" alt="Foto 1" />
+          </div>
+          <div class="info">
+            <h3>Maria da Conceição do Nascimento Arruda</h3>
+            <p> - Professora de Informática.</p>
+            <p> - Formada pela UFC em Sistema de Informação e em Inteligência Artificial.</p>
+            <p> - Especialista em Engenharia e Arquitetura de Software.</p>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="avatar">
+            <img src="/public/aureliano.jpeg" alt="Foto 2" />
+          </div>
+          <div class="info">
+            <h3>Aureliano Vasconcelos</h3>
+            <p>- Professor de Informática</p>
+            <p>- Formação em Análise e em Desenvolvimento de Sistemas</p>
+            <p>- Especialista em Segurança e Rede de computadores</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrossel de alunos -->
+      <h2 style="text-align: center; margin-top: 40px; color: var(--font)">
+        Alunos
+      </h2>
+      <div class="carousel-wrapper" id="carouselWrapper"></div>
+
+      <section class="sobre-section">
+        <div class="sobre-img">
+          <img src="../public/download (2).png" alt="Equipe Help-IA" />
+        </div>
+        <div class="sobre-content">
+          <h2>Como este projeto contribui para a sociedade</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O projeto Help-IA busca democratizar
+            o acesso ao conhecimento sobre Inteligência Artificial,
+            aproximando tecnologia e comunidade de forma simples e educativa.
+            Ao despertar a curiosidade, incentivar a criatividade e promover a
+            inclusão digital, o projeto ajuda jovens e adultos a desenvolverem
+            habilidades essenciais para o futuro. Assim, contribuímos para
+            formar cidadãos mais preparados, conscientes e capazes de utilizar
+            a tecnologia como ferramenta para transformar suas realidades e
+            gerar impacto positivo na sociedade.
+          </p>
+        </div>
+      </section>
+
+      <section class="sobre-section">
+        <div class="sobre-content">
+          <h2>Culminância</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O projeto vai contar com oficinas
+            (que acontecerão no dia da culminância presencialmente e também
+            serão disponibilizadas no site) sobre 5 IAs diferentes (deepseek,
+            perplexity, Grok, gemini e copilot) e também uma palestra em
+            pessoa sobre inteligências artificiais.
+          </p>
+        </div>
+        <div class="sobre-img">
+          <img src="../public/21490616fd3e6fed057129486c4e1d5a-removebg-preview.png" alt="Equipe Help-IA" />
+        </div>
+      </section>
+
+      <footer class="footer_area">
+        <div class="container-footer">
+          <div class="row">
+            <!-- Coluna 1 -->
+            <div class="footer_col">
+              <p>
+                <b>Nosso site é criativo, moderno e responsivo para qualquer
+                  dispositivo.</b>
+              </p>
+              <div class="copywrite">
+                <p>
+                  Feito por <a href="#"><b>HELP-IA</b></a>
+                </p>
+              </div>
+              <div class="footer_social_area">
+                <a
+                  href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                    class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Sobre</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/sobre/sobre.html">Sobre nossa jornada</a></li>
+                <li><a href="/sobre/sobre.html">Nossa equipe</a></li>
+                <li><a href="/sobre/sobre.html">Alunos</a></li>
+                <li><a href="/sobre/sobre.html">Culminância</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Coluna 3 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Navegação</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/destaques/destaques.html">Ias em destaque</a></li>
+                <li><a href="/metodologia/star.html">Metodologia STAR</a></li>
+                <li><a href="/prompts/prompts.html">Melhores prompts</a></li>
+                <li><a href="/sobre/sobre.html">Sobre nós</a></li>
+              </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Contato</b></h5>
+              <ul class="footer_menu">
+                <li>
+                  <a
+                    href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g">Tik
+                    Tok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu hover effect
+      let list = document.querySelectorAll(".navigation li");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+      // Menu mobile functionality
+      let toggle = document.querySelector(".menu");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+      let menuOverlay = document.getElementById("menuOverlay");
+      let menuCloseBtn = document.getElementById("menuCloseBtn");
+
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
+      function updateMenuIcon() {
+        const menuIcon = document.querySelector(".menu ion-icon");
+        if (!menuIcon) return;
+
+        if (isMobile()) {
+          if (navigation.classList.contains("active")) {
+            menuIcon.setAttribute("name", "close-outline");
+          } else {
+            menuIcon.setAttribute("name", "menu-outline");
+          }
+        } else {
+          menuIcon.setAttribute("name", "menu-outline");
+        }
+      }
+
+      if (window.innerWidth > 768) {
+        navigation.classList.add("active");
+        main.classList.add("active");
+      } else {
+        navigation.classList.remove("active");
+        if (main) {
+          main.classList.remove("active");
+        }
+        if (menuOverlay) {
+          menuOverlay.classList.remove("active");
+        }
+      }
+
+      updateMenuIcon();
+
+      if (toggle && navigation) {
+        toggle.onclick = function () {
+          navigation.classList.toggle("active");
+          if (main) {
+            main.classList.toggle("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.toggle("active");
+          }
+
+          updateMenuIcon();
+        };
+      }
+
+      if (menuOverlay) {
+        menuOverlay.onclick = function () {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          menuOverlay.classList.remove("active");
+
+          updateMenuIcon();
+        };
+      }
+
+      if (menuCloseBtn) {
+        menuCloseBtn.onclick = function () {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.remove("active");
+          }
+
+          updateMenuIcon();
+        };
+      }
+
+      let menuLinks = document.querySelectorAll(".navigation a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          if (isMobile()) {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+            if (menuOverlay) {
+              menuOverlay.classList.remove("active");
+            }
+            updateMenuIcon();
+          }
+        });
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.querySelector(".toggle");
+      if (themeToggle) {
+        function applyTheme() {
+          if (themeToggle.checked) {
+            document.body.classList.add("light");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.body.classList.remove("light");
+            localStorage.setItem("theme", "dark");
+          }
+        }
+
+        function loadTheme() {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light") {
+            themeToggle.checked = true;
+            document.body.classList.add("light");
+          } else {
+            themeToggle.checked = false;
+            document.body.classList.remove("light");
+          }
+        }
+
+        loadTheme();
+        themeToggle.addEventListener("change", applyTheme);
+      }
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          if (navigation && navigation.classList.contains("active")) {
+            const menuIcon = document.querySelector(".menu ion-icon");
+            if (
+              menuIcon &&
+              menuIcon.getAttribute("name") === "close-outline"
+            ) {
+              navigation.classList.remove("active");
+              if (main) {
+                main.classList.remove("active");
+              }
+              if (menuOverlay) {
+                menuOverlay.classList.remove("active");
+              }
+            }
+          }
+
+          if (window.innerWidth > 768) {
+            navigation.classList.add("active");
+            main.classList.add("active");
+          }
+        } else {
+          if (navigation && navigation.classList.contains("active")) {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+          }
+        }
+        updateMenuIcon();
+      });
+    });
+
+    function renderCards() {
+      const cards = [
+        { src: "/public/alunos/letícia.png", title: "Ana Letícia", description: "Desenvolvimento" },
+        {
+          src: "/public/alunos/andre.png",
+          title: "André Carneiro",
+          description: "Marketing",
+        },
+        // {
+        //   src: "",
+        //   title: "Andreia Darle",
+        //   description: "Marketing",
+        // },
+        {
+          src: "/public/alunos/evanardo.png",
+          title: "Antonio Evarnardo",
+          description: "Desenvolvimento",
+        },
+        {
+          src: "/public/alunos/bia.png",
+          title: "Beatriz de Sousa",
+          description: "Financeiro",
+        },
+        // { src: "", title: "Caio Antony", description: "" },
+        // {
+        //   src: "",
+        //   title: "Carla Letícia",
+        //   description: "Liderança Geral",
+        // },
+        {
+          src: "/public/alunos/carlos.png",
+          title: "Carlos Augusto",
+          description: "",
+        },
+        {
+          src: "/public/alunos/davi.png",
+          title: "Davi de Sousa",
+          description: "",
+        },
+        {
+          src: "/public/alunos/elen.png",
+          title: "Elen Andrade",
+          description: "Desenvolvimento",
+        },
+        {
+          src: "/public/alunos/levi.png",
+          title: "Francisco Levi",
+          description: "",
+        },
+        {
+          src: "/public/alunos/magelo.png",
+          title: "Francisco Magelo",
+          description: "Desenvolvimento",
+        },
+        {
+          src: "/public/alunos/ismael.png",
+          title: "Ismael Felix",
+          description: "Marketing",
+        },
+        {
+          src: "/public/alunos/iury.png",
+          title: "Iury da Costa",
+          description: "Financeiro",
+        },
+        {
+          src: "/public/alunos/bosco.png",
+          title: "João Bosco",
+          description: "Marketing",
+        },
+        {
+          src: "/public/alunos/moura.png",
+          title: "João Guilherme",
+          description: "Marketing",
+        },
+        { src: "/public/alunos/lucas.png", title: "João Lucas", description: "" },
+        {
+          src: "/public/alunos/costa.png",
+          title: "João Pedro",
+          description: "Desenvolvimento",
+        },
+        {
+          src: "/public/alunos/josias.png",
+          title: "Josias de Oliveira",
+          description: "",
+        },
+        {
+          src: "/public/alunos/julia.png",
+          title: "Júlia Evelym",
+          description: "Design",
+        },
+        // {
+        //   src: "",
+        //   title: "Júlio Lorenço",
+        //   description: "",
+        // },
+        {
+          src: "/public/alunos/larissa.png",
+          title: "Larissa Andrade",
+          description: "Design",
+        },
+        {
+          src: "/public/alunos/marcos.png",
+          title: "Marcos Anderson",
+          description: "Ornamentação",
+        },
+        // {
+        //   src: "",
+        //   title: "Maria Evellyn",
+        //   description: "Ornamentação",
+        // },
+        {
+          src: "/public/alunos/mariana.png",
+          title: "Mariana Cordeiro",
+          description: "Financeiro",
+        },
+        {
+          src: "/public/alunos/melqui.png",
+          title: "Melquisedec Ferreira",
+          description: "",
+        },
+        // {
+        //   src: "",
+        //   title: "Naidioneldo Aguiar",
+        //   description: "Design",
+        // },
+        {
+          src: "/public/alunos/nailani.png",
+          title: "Nailane Bezerra",
+          description: "  Marketing",
+        },
+        {
+          src: "/public/alunos/nicolas.png",
+          title: "Nicolas Dayvison",
+          description: "Desenvolvimento",
+        },
+        {
+          src: "/public/alunos/nadson.png",
+          title: "Paulo Nadson",
+          description: "Desenvolvimento",
+        },
+        {
+          src: "/public/alunos/roberta.png",
+          title: "Roberta da Silva",
+          description: "Ornamentação",
+        },
+        // {
+        //   src: "",
+        //   title: "Sofia Ângelo",
+        //   description: "Liderança Geral",
+        // },
+        {
+          src: "/public/alunos/taylani.png",
+          title: "Taylani Ribeiro",
+          description: "Financeiro",
+        },
+        {
+          src: "/public/alunos/thais.png",
+          title: "Thais Gonçalves",
+          description: "Financeiro",
+        },
+      ];
+
+      const wrapper = document.getElementById("carouselWrapper");
+      wrapper.innerHTML = "";
+      const repeatedCards = [...cards, ...cards];
+
+      repeatedCards.forEach((card) => {
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card-alunos");
+        cardDiv.innerHTML = `
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="${card.src ? card.src : '/public/alunos/default.png'}" alt="${card.title}">
+              </div>
+              <div class="card-back">
+                <p>${card.title}</p>
+                <p>${card.description || ''}</p>
+              </div>
+            </div>
+          `;
+
+        wrapper.appendChild(cardDiv);
+
+        cardDiv.addEventListener("mouseenter", () => {
+          wrapper.classList.add("paused");
+          document.querySelectorAll(".card-alunos").forEach((c) => {
+            if (c !== cardDiv) c.classList.add("blurred");
+          });
+        });
+
+        cardDiv.addEventListener("mouseleave", () => {
+          wrapper.classList.remove("paused");
+          document.querySelectorAll(".card-alunos").forEach((c) => {
+            c.classList.remove("blurred");
+          });
+        });
+      });
+
+      let scrollAmount = 0;
+      function autoScroll() {
+        if (!wrapper.classList.contains("paused")) {
+          scrollAmount += 1;
+          if (scrollAmount >= wrapper.scrollWidth / 2) scrollAmount = 0;
+          wrapper.scrollLeft = scrollAmount;
+        }
+        requestAnimationFrame(autoScroll);
+      }
+
+      autoScroll();
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCards);
+
+    // -- CHATBOT --
+
+    const chatInput = document.querySelector(".chat-input textarea");
+    const sendChatBtn = document.querySelector(".chat-input span");
+    const chatbox = document.querySelector(".chatbox");
+    const chatbotToggler = document.querySelector(".chatbot-toggler");
+    const chatbotCloseBtn = document.querySelector(".close-btn");
+
+    let userMessage;
+    let isWaitingForResponse = false;
+    const API_KEY = "AIzaSyA0zbnHyOsCwrIrNb8cI8eG1rfSumsx5vI";
+    const inputInitHeight = chatInput.scrollHeight;
+
+    const updateSendButtonState = () => {
+      sendChatBtn.style.pointerEvents = isWaitingForResponse
+        ? "none"
+        : "auto";
+      sendChatBtn.style.opacity = isWaitingForResponse ? "0.5" : "1";
+    };
+
+    const createChatLi = (message, className) => {
+      const chatLi = document.createElement("li");
+      chatLi.classList.add("chat", className);
+      let chatContent =
+        className === "outgoing"
+          ? `<p></p>`
+          : `<img src="/public/help-ai.jpeg" alt="Logo da HelpAI"><p></p>`;
+      chatLi.innerHTML = chatContent;
+      chatLi.querySelector("p").textContent = message;
+      return chatLi;
+    };
+
+    const generateResponse = (incomingChatLi) => {
+      const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+      const messageElement = incomingChatLi.querySelector("p");
+
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: `Por favor, responda sem usar nenhuma formatação markdown (sem **, #, *, etc.). Apenas texto simples.\n\n${userMessage}`,
+                },
+              ],
+            },
+          ],
+        }),
+      };
+
+      fetch(API_URL, requestOptions)
+        .then((res) => res.json())
+        .then((data) => {
+          messageElement.textContent =
+            data.candidates[0].content.parts[0].text;
+        })
+        .catch((error) => {
+          messageElement.classList.add("error");
+          messageElement.textContent =
+            "Oops! Algo deu errado. Por favor, tente novamente.";
+        })
+        .finally(() => {
+          chatbox.scrollTo(0, chatbox.scrollHeight);
+          isWaitingForResponse = false;
+          updateSendButtonState();
+          chatInput.focus();
+        });
+    };
+
+    const handleChat = () => {
+      if (isWaitingForResponse) return;
+      userMessage = chatInput.value.trim();
+      if (!userMessage) return;
+      chatInput.value = "";
+      chatInput.style.height = `${inputInitHeight}px`;
+      chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+      chatbox.scrollTo(0, chatbox.scrollHeight);
+
+      isWaitingForResponse = true;
+      updateSendButtonState();
+
+      setTimeout(() => {
+        const incomingChatLi = createChatLi("Pensando...", "incoming");
+        chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+        generateResponse(incomingChatLi);
+      }, 600);
+    };
+
+    chatInput.addEventListener("input", () => {
+      chatInput.style.height = `${inputInitHeight}px`;
+      chatInput.style.height = `${chatInput.scrollHeight}px`;
+      if (!chatInput.value.trim() && isWaitingForResponse) {
+        sendChatBtn.style.pointerEvents = "none";
+      }
+    });
+
+    chatInput.addEventListener("keydown", (e) => {
+      if (
+        e.key === "Enter" &&
+        !e.shiftKey &&
+        window.innerWidth > 800 &&
+        !isWaitingForResponse
+      ) {
+        e.preventDefault();
+        handleChat();
+      }
+    });
+
+    sendChatBtn.addEventListener("click", handleChat);
+    chatbotCloseBtn.addEventListener("click", () =>
+      document.body.classList.remove("show-chatbot")
+    );
+    chatbotToggler.addEventListener("click", () =>
+      document.body.classList.toggle("show-chatbot")
+    );
+
+    updateSendButtonState();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help-IA</title>
+  <link rel="stylesheet" href="/prmpts.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <link rel="icon" href="/public/help-ai.jpeg" type="image/png">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+      <div class="menu-close-btn" id="menuCloseBtn">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <img src="/public/help-ia-removebg-preview.png" alt="" id="img-help" />
+            </span>
+            <span class="title"> Help-IA</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/index.html">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="title">Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="/destaques/destaques.html">
+            <span class="icon">
+              <ion-icon name="bookmarks-outline"></ion-icon>
+            </span>
+            <span class="title">IAs em destaque</span>
+          </a>
+        </li>
+        <li>
+          <a href="/metodologia/star.html">
+            <span class="icon">
+              <ion-icon name="star-outline"></ion-icon>
+            </span>
+            <span class="title">Metodologia STAR</span>
+          </a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/prompts/prompts.html">
+            <span class="icon">
+              <ion-icon name="code-working-outline"></ion-icon>
+            </span>
+            <span class="title">Melhores prompts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/sobre/sobre.html">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">Sobre nós</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>HelpAi - Chatbot</h2>
+        <span class="closee-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <img src="/public/help-ai.jpeg" alt="Logo da HelpAI">
+          <p>Olá, bem vindo ao chatbot da HelpAi<br>Como posso te ajudar? </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Envie uma mensagem..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined"> send</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input checked="" type="checkbox" class="toggle" />
+            <span class="slider"></span>
+            <span class="card-side"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="prompt-improver-container">
+        <div class="input-wrapper">
+          <div class="text-input-container">
+            <textarea id="originalPrompt" placeholder="Deixe-me ajudar a refinar o seu prompt. Qual é a sua ideia?"
+              class="prompt-textarea"></textarea>
+
+            <div id="loadingIndicator" class="inline-loading" style="display: none;">
+              <div class="jumping-dots-loader">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+
+            <div class="input-actions">
+              <button id="resetBtn" class="reset-btn" title="Limpar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3 6H21M10 6V4C10 3.46957 10.2107 2.96086 10.5858 2.58579C10.9609 2.21071 11.4696 2 12 2C12.5304 2 13.0391 2.21071 13.4142 2.58579C13.7893 2.96086 14 3.46957 14 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10 11V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M14 11V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+
+              <button id="improveBtn" class="improve-btn" title="Melhorar Prompt">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 5V19M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <div id="backdropBlur" class="backdrop-blur" style="display: none;"></div>
+
+        <div id="centeredPromptContainer" class="centered-prompt-container" style="display: none;">
+          <div class="prompt-card">
+            <div class="prompt-header">
+              <div class="header-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="header-text">
+                <h3>Prompt Otimizado</h3>
+                <p>Seu prompt foi aprimorado com a metodologia STAR</p>
+              </div>
+              <button id="closeBtn" class="close-btn" title="Fechar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="prompt-content">
+              <div class="prompt-text">
+                <pre id="improvedPromptText"></pre>
+              </div>
+
+              <div class="prompt-actions">
+                <button id="copyBtn" class="copy-btn">
+                  <span class="copy-icon">
+                    <svg id="copyIcon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2" />
+                      <path
+                        d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5"
+                        stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <svg id="copiedIcon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span id="copyText">Copiar Prompt</span>
+                </button>
+
+                <div class="prompt-stats">
+                  <span class="stat-badge methodology">STAR</span>
+                  <span id="charCount" class="stat-badge chars">0 caracteres</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer_area">
+        <div class="container-footer">
+          <div class="row">
+            <!-- Coluna 1 -->
+            <div class="footer_col">
+              <p>
+                <b>Nosso site é criativo, moderno e responsivo para qualquer
+                  dispositivo.</b>
+              </p>
+              <div class="copywrite">
+                <p>
+                  Feito por <a href="#"><b>HELP-IA</b></a>
+                </p>
+              </div>
+              <div class="footer_social_area">
+                <a
+                  href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                    class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Sobre</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/sobre/sobre.html">Sobre nossa jornada</a></li>
+                <li><a href="/sobre/sobre.html">Nossa equipe</a></li>
+                <li><a href="/sobre/sobre.html">Alunos</a></li>
+                <li><a href="/sobre/sobre.html">Culminância</a></li>
+              </ul>
+            </div>
+
+
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Navegação</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/destaques/destaques.html">Ias em destaque</a></li>
+                <li><a href="/metodologia/star.html">Metodologia STAR</a></li>
+                <li><a href="/prompts/prompts.html">Melhores prompts</a></li>
+                <li><a href="/sobre/sobre.html">Sobre nós</a></li>
+              </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Contato</b></h5>
+              <ul class="footer_menu">
+                <li>
+                  <a
+                    href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g">Tik
+                    Tok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Menu hover effect
+        let list = document.querySelectorAll(".navigation li");
+        function activeLink() {
+          list.forEach((item) => item.classList.remove("hovered"));
+          this.classList.add("hovered");
+        }
+        list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+        // Menu mobile functionality
+        let toggle = document.querySelector(".menu");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+        let menuOverlay = document.getElementById("menuOverlay");
+        let menuCloseBtn = document.getElementById("menuCloseBtn");
+
+        function isMobile() {
+          return window.innerWidth <= 768;
+        }
+
+        function updateMenuIcon() {
+          const menuIcon = document.querySelector(".menu ion-icon");
+          if (!menuIcon) return;
+
+          if (isMobile()) {
+            if (navigation.classList.contains("active")) {
+              menuIcon.setAttribute("name", "close-outline");
+            } else {
+              menuIcon.setAttribute("name", "menu-outline");
+            }
+          } else {
+            menuIcon.setAttribute("name", "menu-outline");
+          }
+        }
+
+        if (window.innerWidth > 768) {
+          navigation.classList.add("active");
+          main.classList.add("active");
+        } else {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.remove("active");
+          }
+        }
+
+        updateMenuIcon();
+
+        if (toggle && navigation) {
+          toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            if (main) {
+              main.classList.toggle("active");
+            }
+            if (menuOverlay) {
+              menuOverlay.classList.toggle("active");
+            }
+
+            updateMenuIcon();
+          };
+        }
+
+        if (menuOverlay) {
+          menuOverlay.onclick = function () {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+            menuOverlay.classList.remove("active");
+
+            updateMenuIcon();
+          };
+        }
+
+        if (menuCloseBtn) {
+          menuCloseBtn.onclick = function () {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+            if (menuOverlay) {
+              menuOverlay.classList.remove("active");
+            }
+
+            updateMenuIcon();
+          };
+        }
+
+        let menuLinks = document.querySelectorAll(".navigation a");
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            if (isMobile()) {
+              navigation.classList.remove("active");
+              if (main) {
+                main.classList.remove("active");
+              }
+              if (menuOverlay) {
+                menuOverlay.classList.remove("active");
+              }
+              updateMenuIcon();
+            }
+          });
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector(".toggle");
+        if (themeToggle) {
+          function applyTheme() {
+            if (themeToggle.checked) {
+              document.body.classList.add("light");
+              localStorage.setItem("theme", "light");
+            } else {
+              document.body.classList.remove("light");
+              localStorage.setItem("theme", "dark");
+            }
+          }
+
+          function loadTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+              themeToggle.checked = true;
+              document.body.classList.add("light");
+            } else {
+              themeToggle.checked = false;
+              document.body.classList.remove("light");
+            }
+          }
+
+          loadTheme();
+          themeToggle.addEventListener("change", applyTheme);
+        }
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            if (navigation && navigation.classList.contains("active")) {
+              const menuIcon = document.querySelector(".menu ion-icon");
+              if (menuIcon && menuIcon.getAttribute("name") === "close-outline") {
+                navigation.classList.remove("active");
+                if (main) {
+                  main.classList.remove("active");
+                }
+                if (menuOverlay) {
+                  menuOverlay.classList.remove("active");
+                }
+              }
+            }
+
+            if (window.innerWidth > 768) {
+              navigation.classList.add("active");
+              main.classList.add("active");
+            }
+          } else {
+            if (navigation && navigation.classList.contains("active")) {
+              navigation.classList.remove("active");
+              if (main) {
+                main.classList.remove("active");
+              }
+            }
+          }
+          updateMenuIcon();
+        });
+      });
+
+
+      class PromptImprover {
+        constructor() {
+          this.originalPrompt = '';
+          this.improvedPrompt = '';
+          this.isLoading = false;
+          this.error = '';
+          this.isCopied = false;
+          this.apiResponse = null;
+
+          this.showFloatingBox = false;
+          this.floatingBoxPosition = { x: 100, y: 100 };
+          this.isDragging = false;
+          this.dragOffset = { x: 0, y: 0 };
+
+          this.initializeElements();
+          this.bindEvents();
+        }
+
+        initializeElements() {
+          this.originalPromptTextarea = document.getElementById('originalPrompt');
+          this.loadingIndicator = document.getElementById('loadingIndicator');
+          this.resetBtn = document.getElementById('resetBtn');
+          this.improveBtn = document.getElementById('improveBtn');
+          this.errorMessage = document.getElementById('errorMessage');
+          this.backdropBlur = document.getElementById('backdropBlur');
+          this.centeredPromptContainer = document.getElementById('centeredPromptContainer');
+          this.improvedPromptText = document.getElementById('improvedPromptText');
+          this.closeBtn = document.getElementById('closeBtn');
+          this.copyBtn = document.getElementById('copyBtn');
+          this.copyIcon = document.getElementById('copyIcon');
+          this.copiedIcon = document.getElementById('copiedIcon');
+          this.copyText = document.getElementById('copyText');
+          this.charCount = document.getElementById('charCount');
+        }
+
+        bindEvents() {
+          this.originalPromptTextarea.addEventListener('input', () => this.autoResize());
+          this.originalPromptTextarea.addEventListener('keydown', (event) => this.onKeyDown(event));
+          this.resetBtn.addEventListener('click', () => this.reset());
+          this.improveBtn.addEventListener('click', () => this.improvePrompt());
+          this.closeBtn.addEventListener('click', () => this.closeFloatingBox());
+          this.copyBtn.addEventListener('click', () => this.copyToClipboard());
+          this.backdropBlur.addEventListener('click', () => this.closeFloatingBox());
+
+          // Eventos de arrastar
+          this.centeredPromptContainer.addEventListener('mousedown', (event) => this.startDrag(event));
+          document.addEventListener('mousemove', (event) => this.onDrag(event));
+          document.addEventListener('mouseup', () => this.stopDrag());
+        }
+
+        async improvePrompt() {
+          this.originalPrompt = this.originalPromptTextarea.value;
+
+          if (!this.originalPrompt.trim()) {
+            this.showError('Por favor, digite um prompt para melhorar.');
+            return;
+          }
+
+          this.setLoading(true);
+          this.hideError();
+          this.improvedPrompt = '';
+          this.isCopied = false;
+          this.apiResponse = null;
+          this.showFloatingBox = false;
+
+          try {
+            const response = await this.geminiServiceImprovePrompt(this.originalPrompt);
+            this.apiResponse = response;
+
+            const improvedText = this.extractImprovedPrompt(response);
+
+            if (improvedText) {
+              this.improvedPrompt = improvedText;
+              this.showFloatingBox = true;
+              this.displayImprovedPrompt();
+            } else {
+              this.showError('Não foi possível extrair o prompt melhorado da resposta.');
+            }
+          } catch (err) {
+            this.showError('Opss!! Aguardem um pouco e tente novamente.');
+          } finally {
+            this.setLoading(false);
+          }
+        }
+
+        extractImprovedPrompt(response) {
+          if (response.candidates?.[0]?.content?.parts?.[0]?.text) {
+            return response.candidates[0].content.parts[0].text.trim();
+          }
+
+          if (response.contents?.[0]?.parts?.[0]?.text) {
+            return response.contents[0].parts[0].text.trim();
+          }
+
+          if (response.text) {
+            return response.text.trim();
+          }
+
+          return '';
+        }
+
+        async geminiServiceImprovePrompt(prompt) {
+          const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
+          const apiKey = 'AIzaSyBsfZpBxx55aGFz0Bw2BvdAPWvNHh65T_w';
+
+          const headers = {
+            'Content-Type': 'application/json'
+          };
+
+          const body = {
+            contents: [{
+              parts: [{
+                text: this.createImprovementPrompt(prompt)
+              }]
+            }],
+            safetySettings: [
+              {
+                category: "HARM_CATEGORY_HARASSMENT",
+                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              },
+              {
+                category: "HARM_CATEGORY_HATE_SPEECH",
+                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              }
+            ],
+            generationConfig: {
+              temperature: 0.7,
+              topP: 0.8,
+              topK: 40,
+              maxOutputTokens: 2048
+            }
+          };
+
+          const url = `${apiUrl}?key=${apiKey}`;
+
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(body)
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          return await response.json();
+        }
+
+        createImprovementPrompt(originalPrompt) {
+          return `SEU PAPEL: Você é um especialista em melhorar prompts usando a metodologia STAR (Situação, Tarefa, Ação, Resultado).
+
+INSTRUÇÃO: Melhore o prompt abaixo aplicando a metodologia STAR. NÃO execute o prompt, apenas o reformule seguindo a estrutura STAR.
+
+PROMPT ORIGINAL: "${originalPrompt}"
+
+ESTRUTURA STAR QUE DEVE SER SEGUIDA:
+- SITUAÇÃO: Contexto ou cenário
+- TAREFA: Objetivo específico  
+- AÇÃO: Passos ou abordagem
+- RESULTADO: Resultado esperado
+
+REGRAS:
+1. Mantenha o propósito original do prompt
+2. Apenas reformule seguindo STAR
+3. Não adicione explicações
+4. Não execute o prompt
+5. Retorne apenas o prompt melhorado
+
+RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
+        }
+
+        startDrag(event) {
+          if (!event.target.closest('.prompt-header')) return;
+
+          this.isDragging = true;
+          this.dragOffset.x = event.clientX - this.floatingBoxPosition.x;
+          this.dragOffset.y = event.clientY - this.floatingBoxPosition.y;
+          event.preventDefault();
+        }
+
+        onDrag(event) {
+          if (!this.isDragging) return;
+
+          this.floatingBoxPosition.x = event.clientX - this.dragOffset.x;
+          this.floatingBoxPosition.y = event.clientY - this.dragOffset.y;
+
+          this.centeredPromptContainer.style.left = this.floatingBoxPosition.x + 'px';
+          this.centeredPromptContainer.style.top = this.floatingBoxPosition.y + 'px';
+        }
+
+        stopDrag() {
+          this.isDragging = false;
+        }
+
+        closeFloatingBox() {
+          this.showFloatingBox = false;
+          this.hideFloatingBox();
+        }
+
+        displayImprovedPrompt() {
+          this.improvedPromptText.textContent = this.improvedPrompt;
+          this.charCount.textContent = `${this.improvedPrompt.length} caracteres`;
+          this.showFloatingBoxUI();
+        }
+
+        showFloatingBoxUI() {
+          this.centeredPromptContainer.style.display = 'flex';
+          this.backdropBlur.style.display = 'block';
+
+          // Posicionamento inicial
+          this.centeredPromptContainer.style.left = this.floatingBoxPosition.x + 'px';
+          this.centeredPromptContainer.style.top = this.floatingBoxPosition.y + 'px';
+
+          setTimeout(() => {
+            this.centeredPromptContainer.classList.add('show');
+          }, 10);
+        }
+
+        hideFloatingBox() {
+          this.centeredPromptContainer.classList.remove('show');
+          setTimeout(() => {
+            this.centeredPromptContainer.style.display = 'none';
+            this.backdropBlur.style.display = 'none';
+          }, 300);
+        }
+
+        copyToClipboard() {
+          if (!this.improvedPrompt) return;
+
+          navigator.clipboard.writeText(this.improvedPrompt).then(() => {
+            this.isCopied = true;
+            this.showCopiedState();
+            setTimeout(() => {
+              this.isCopied = false;
+              this.hideCopiedState();
+            }, 3000);
+          }).catch((err) => {
+            this.showError('Erro ao copiar para a área de transferência.');
+          });
+        }
+
+        showCopiedState() {
+          this.copyIcon.style.display = 'none';
+          this.copiedIcon.style.display = 'block';
+          this.copyText.textContent = 'Copiado!';
+          this.copyBtn.classList.add('copied');
+        }
+
+        hideCopiedState() {
+          this.copyIcon.style.display = 'block';
+          this.copiedIcon.style.display = 'none';
+          this.copyText.textContent = 'Copiar Prompt';
+          this.copyBtn.classList.remove('copied');
+        }
+
+        autoResize() {
+          const textarea = this.originalPromptTextarea;
+          if (textarea) {
+            textarea.style.height = 'auto';
+            const newHeight = Math.min(textarea.scrollHeight, 200);
+            textarea.style.height = newHeight + 'px';
+          }
+        }
+
+        onKeyDown(event) {
+          if (event.key === 'Enter') {
+            if (event.shiftKey) {
+              return;
+            } else {
+              event.preventDefault();
+              this.improvePrompt();
+            }
+          }
+        }
+
+        reset() {
+          this.originalPromptTextarea.value = '';
+          this.improvedPrompt = '';
+          this.hideError();
+          this.isCopied = false;
+          this.apiResponse = null;
+          this.showFloatingBox = false;
+          this.hideFloatingBox();
+          this.hideCopiedState();
+          this.autoResize();
+        }
+
+        setLoading(loading) {
+          this.isLoading = loading;
+          if (loading) {
+            this.loadingIndicator.style.display = 'block';
+            this.improveBtn.disabled = true;
+            this.resetBtn.disabled = true;
+            this.originalPromptTextarea.disabled = true;
+          } else {
+            this.loadingIndicator.style.display = 'none';
+            this.improveBtn.disabled = false;
+            this.resetBtn.disabled = false;
+            this.originalPromptTextarea.disabled = false;
+          }
+        }
+
+        showError(message) {
+          this.error = message;
+          this.errorMessage.textContent = message;
+          this.errorMessage.style.display = 'flex';
+        }
+
+        hideError() {
+          this.error = '';
+          this.errorMessage.style.display = 'none';
+        }
+      }
+
+      // Serviço Gemini (opcional - pode ser mantido como classe separada)
+      class GeminiService {
+        constructor() {
+          this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
+          this.apiKey = 'AIzaSyA0zbnHyOsCwrIrNb8cI8eG1rfSumsx5vI';
+        }
+
+        async improvePrompt(prompt) {
+          const headers = {
+            'Content-Type': 'application/json'
+          };
+
+          const body = {
+            contents: [{
+              parts: [{
+                text: this.createImprovementPrompt(prompt)
+              }]
+            }],
+            safetySettings: [
+              {
+                category: "HARM_CATEGORY_HARASSMENT",
+                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              },
+              {
+                category: "HARM_CATEGORY_HATE_SPEECH",
+                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              }
+            ],
+            generationConfig: {
+              temperature: 0.7,
+              topP: 0.8,
+              topK: 40,
+              maxOutputTokens: 2048
+            }
+          };
+
+          const url = `${this.apiUrl}?key=${this.apiKey}`;
+
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(body)
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          return await response.json();
+        }
+
+        createImprovementPrompt(originalPrompt) {
+          return `SEU PAPEL: Você é um especialista em melhorar prompts usando a metodologia STAR (Situação, Tarefa, Ação, Resultado).
+
+INSTRUÇÃO: Melhore o prompt abaixo aplicando a metodologia STAR. NÃO execute o prompt, apenas o reformule seguindo a estrutura STAR.
+
+PROMPT ORIGINAL: "${originalPrompt}"
+
+ESTRUTURA STAR QUE DEVE SER SEGUIDA:
+- SITUAÇÃO: Contexto ou cenário
+- TAREFA: Objetivo específico  
+- AÇÃO: Passos ou abordagem
+- RESULTADO: Resultado esperado
+
+REGRAS:
+1. Mantenha o propósito original do prompt
+2. Apenas reformule seguindo STAR
+3. Não adicione explicações
+4. Não execute o prompt
+5. Retorne apenas o prompt melhorado
+
+RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
+        }
+      }
+
+      // Inicializar a aplicação quando o DOM estiver carregado
+      document.addEventListener('DOMContentLoaded', () => {
+        new PromptImprover();
+      });
+
+      // -- CHATBOT --
+
+      const chatInput = document.querySelector(".chat-input textarea");
+      const sendChatBtn = document.querySelector(".chat-input span");
+      const chatbox = document.querySelector(".chatbox");
+      const chatbotToggler = document.querySelector(".chatbot-toggler");
+      const chatbotCloseBtn = document.querySelector(".closee-btn");
+
+      let userMessage;
+      let isWaitingForResponse = false;
+      const API_KEY = 'AIzaSyA0zbnHyOsCwrIrNb8cI8eG1rfSumsx5vI';
+      const inputInitHeight = chatInput.scrollHeight;
+
+      const updateSendButtonState = () => {
+        sendChatBtn.style.pointerEvents = isWaitingForResponse ? "none" : "auto";
+        sendChatBtn.style.opacity = isWaitingForResponse ? "0.5" : "1";
+      };
+
+      const createChatLi = (message, className) => {
+        const chatLi = document.createElement("li");
+        chatLi.classList.add("chat", className);
+        let chatContent = className === "outgoing" ? `<p></p>` : `<img src="/public/help-ai.jpeg" alt="Logo da HelpAI"><p></p>`
+        chatLi.innerHTML = chatContent;
+        chatLi.querySelector("p").textContent = message;
+        return chatLi;
+      }
+
+      const generateResponse = (incomingChatLi) => {
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+        const messageElement = incomingChatLi.querySelector("p");
+
+        const requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{
+              role: "user",
+              parts: [{
+                text: `Por favor, responda sem usar nenhuma formatação markdown (sem **, #, *, etc.). Apenas texto simples.\n\n${userMessage}`
+              }]
+            }]
+          })
+        }
+
+        fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+          messageElement.textContent = data.candidates[0].content.parts[0].text;
+        }).catch((error) => {
+          messageElement.classList.add("error");
+          messageElement.textContent = "Oops! Algo deu errado. Por favor, tente novamente."
+        }).finally(() => {
+          chatbox.scrollTo(0, chatbox.scrollHeight);
+          isWaitingForResponse = false;
+          updateSendButtonState();
+          chatInput.focus();
+        });
+      }
+
+      const handleChat = () => {
+        if (isWaitingForResponse) return;
+        userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+        chatInput.value = "";
+        chatInput.style.height = `${inputInitHeight}px`;
+        chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+
+        isWaitingForResponse = true;
+        updateSendButtonState();
+
+        setTimeout(() => {
+          const incomingChatLi = createChatLi("Pensando...", "incoming");
+          chatbox.appendChild(incomingChatLi);
+          chatbox.scrollTo(0, chatbox.scrollHeight);
+          generateResponse(incomingChatLi);
+        }, 600);
+      };
+
+
+      chatInput.addEventListener("input", () => {
+        chatInput.style.height = `${inputInitHeight}px`;
+        chatInput.style.height = `${chatInput.scrollHeight}px`;
+        if (!chatInput.value.trim() && isWaitingForResponse) {
+          sendChatBtn.style.pointerEvents = "none";
+        }
+      });
+
+      chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800 && !isWaitingForResponse) {
+          e.preventDefault();
+          handleChat();
+        }
+      });
+
+      sendChatBtn.addEventListener("click", handleChat);
+      chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+      chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+      updateSendButtonState();
+    </script>
+</body>
+
+</html>
