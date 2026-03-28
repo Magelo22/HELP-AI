@@ -542,7 +542,7 @@
 
         async geminiServiceImprovePrompt(prompt) {
           const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
-          const apiKey = 'AIzaSyBsfZpBxx55aGFz0Bw2BvdAPWvNHh65T_w';
+          const apiKey = /* 'SUA_CHAVE_API_KEY' */;
 
           const headers = {
             'Content-Type': 'application/json'
@@ -636,6 +636,8 @@ RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
         closeFloatingBox() {
           this.showFloatingBox = false;
           this.hideFloatingBox();
+
+          window.removeEventListener('resize', this.handleWindowResize.bind(this));
         }
 
         displayImprovedPrompt() {
@@ -648,13 +650,31 @@ RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
           this.centeredPromptContainer.style.display = 'flex';
           this.backdropBlur.style.display = 'block';
 
-          // Posicionamento inicial
-          this.centeredPromptContainer.style.left = this.floatingBoxPosition.x + 'px';
-          this.centeredPromptContainer.style.top = this.floatingBoxPosition.y + 'px';
+          this.centeredPromptContainer.style.left = '0';
+          this.centeredPromptContainer.style.top = '0';
+          this.centeredPromptContainer.style.transform = 'none';
+          this.centeredPromptContainer.style.margin = '0';
+
+          this.floatingBoxPosition = {
+            x: window.innerWidth / 2 - 200,
+            y: window.innerHeight / 2 - 150
+          };
 
           setTimeout(() => {
             this.centeredPromptContainer.classList.add('show');
           }, 10);
+          window.addEventListener('resize', this.handleWindowResize.bind(this));
+        }
+
+        handleWindowResize() {
+          if (this.showFloatingBox) {
+            this.centeredPromptContainer.style.left = '0';
+            this.centeredPromptContainer.style.top = '0';
+            this.floatingBoxPosition = {
+              x: window.innerWidth / 2 - 200,
+              y: window.innerHeight / 2 - 150
+            };
+          }
         }
 
         hideFloatingBox() {
@@ -753,11 +773,10 @@ RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
         }
       }
 
-      // Serviço Gemini (opcional - pode ser mantido como classe separada)
       class GeminiService {
         constructor() {
           this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
-          this.apiKey = 'AIzaSyA0zbnHyOsCwrIrNb8cI8eG1rfSumsx5vI';
+          this.apiKey = /* 'CHAVE_API_KEY' */
         }
 
         async improvePrompt(prompt) {
@@ -827,8 +846,6 @@ REGRAS:
 RETORNE APENAS O PROMPT MELHORADO E NADA MAIS:`;
         }
       }
-
-      // Inicializar a aplicação quando o DOM estiver carregado
       document.addEventListener('DOMContentLoaded', () => {
         new PromptImprover();
       });
