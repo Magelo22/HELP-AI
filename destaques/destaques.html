@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help-IA</title>
+  <link rel="stylesheet" href="/destaque.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <link rel="icon" href="../public/help-ai.jpeg" type="image/png">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+      <div class="menu-close-btn" id="menuCloseBtn">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <img src="../public/help-ia-removebg-preview.png" alt="" id="img-help" />
+            </span>
+            <span class="title"> Help-IA</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/index.html">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="title">Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="/destaques/destaques.html">
+            <span class="icon">
+              <ion-icon name="bookmarks-outline"></ion-icon>
+            </span>
+            <span class="title">IAs em destaque</span>
+          </a>
+        </li>
+        <li>
+          <a href="/metodologia/star.html">
+            <span class="icon">
+              <ion-icon name="star-outline"></ion-icon>
+            </span>
+            <span class="title">Metodologia STAR</span>
+          </a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/prompts/prompts.html">
+            <span class="icon">
+              <ion-icon name="code-working-outline"></ion-icon>
+            </span>
+            <span class="title">Melhores prompts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/sobre/sobre.html">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">Sobre nós</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>HelpAi - Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <img src="../public/help-ai.jpeg" alt="Logo da HelpAI">
+          <p>Olá, bem vindo ao chatbot da HelpAi<br>Como posso te ajudar? </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Envie uma mensagem..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined"> send</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input checked="" type="checkbox" class="toggle" />
+            <span class="slider"></span>
+            <span class="card-side"></span>
+          </label>
+        </div>
+      </div>
+
+      <h1 class="destaque-title">
+        IAs recomendadas para uso
+      </h1>
+
+      <div class="container-destaques">
+        <div class="slider-destaque" style="--width: 320px; --height: 300px; --quantity: 5">
+          <div class="list">
+            <div class="item" style="--position: 1">
+              <div class="card" style="background: linear-gradient(135deg, #fbffcd, #fbffcd)">
+                <img class="gemini-icon" src="../public/gemini-color.png" />
+                <h3 style="color: black">Gemini</h3>
+                <p style="color: black">
+                  Gemini integra múltiplas fontes de informação para oferecer
+                  respostas precisas e personalizadas.
+                </p>
+              </div>
+            </div>
+
+            <div class="item" style="--position: 2">
+              <div class="card" style="background: linear-gradient(135deg, #040404, #363636)">
+                <img class="grok-icon" src="../public/grok.png" />
+                <h3>Grok</h3>
+                <p>
+                  Grok se destaca pela capacidade de compreender contextos
+                  complexos e fornecer insights detalhados em tempo real.
+                </p>
+              </div>
+            </div>
+
+            <div class="item" style="--position: 3">
+              <div class="card" style="background: linear-gradient(135deg, #001f36, #1c5560)">
+                <img class="copilot-icon" src="../public/copilot.png" />
+                <h3>Copilot</h3>
+                <p>
+                  Copilot facilita a codificação automatizada, aumentando a
+                  produtividade de desenvolvedores com sugestões inteligentes.
+                </p>
+              </div>
+            </div>
+
+            <div class="item" style="--position: 4">
+              <div class="card" style="background: linear-gradient(135deg, #040404, #363636)">
+                <img class="perplexity-icon" src="../public/perplexity.png" />
+                <h3>Perplexity</h3>
+                <p>
+                  Perplexity oferece respostas rápidas e confiáveis com
+                  suporte a processamento de linguagem natural avançado.
+                </p>
+              </div>
+            </div>
+
+            <div class="item" style="--position: 5">
+              <div class="card" style="background: linear-gradient(135deg, #001f36, #1c5560)">
+                <img class="deepseek-icon" src="../public/deepseek.png" />
+                <h3>Deepseek</h3>
+                <p>
+                  Deepseek é excelente na busca profunda por dados
+                  específicos, ajudando a encontrar informações raras com
+                  eficiência.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ia-landing-section">
+        <div class="container-exemplos-prompts" style="
+              width: 100%;
+              max-width: 1000px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            ">
+          <div class="section-header" style="text-align: center; margin-bottom: 40px; max-width: 800px">
+            <h1 class="section-title">Encontre prompts poderosos aqui</h1>
+            <p class="section-subtitle">
+              Encontre o <b>PROMPT</b> ideal para aprimorar sua produtividade,
+              gerar ideias inovadoras e resolver problemas complexos com
+              eficiência.
+            </p>
+          </div>
+
+          <div id="container">
+            <div class="tab-buttons">
+              <button class="tab-btn active" content-id="home">Gemini</button>
+
+              <button class="tab-btn" content-id="services">DeepSeek</button>
+
+              <button class="tab-btn" content-id="contacts">Grok</button>
+
+              <button class="tab-btn" content-id="location">
+                Perplexity
+              </button>
+
+              <button class="tab-btn" content-id="about">Copilot</button>
+            </div>
+
+            <div class="tab-contents">
+              <div class="content" id="home">
+                <img src="./../public/gemini-color.png" class="content-img" alt="Gemini image" />
+
+                <div class="infos">
+                  <h1 class="content-title">
+                    Pesquisa, escrita criativa, planejamento multimídia e
+                    integração com o ecossistema Google.
+                  </h1>
+
+                  <div class="content-description">
+                    <div class="prompt-item">
+                      <strong>1.</strong> Você é um professor especialista em
+                      [disciplina]. Crie um plano de aula completo de 45
+                      minutos sobre [tema] para alunos do [nível/idade],
+                      utilizando a metodologia [metodologia]. Inclua objetivo
+                      geral, recursos necessários, estrutura detalhada minuto
+                      a minuto, duas atividades práticas e um quiz com 5
+                      perguntas relacionadas à [competência]. Finalize com um
+                      resumo dos aprendizados esperados.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>2.</strong> Imagine que você está elaborando um
+                      relatório sobre [tema] voltado para [público-alvo].
+                      Apresente uma introdução que contextualize o assunto e
+                      destaque a tese central de forma clara e envolvente. Em
+                      seguida, desenvolva uma conclusão que sintetize os
+                      principais resultados e apresente uma recomendação final
+                      bem fundamentada, coerente com os objetivos do relatório
+                      e com as necessidades do público.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>3.</strong> Analise o [tipo de mídia] que
+                      apresenta [descrição dos dados] e identifique os
+                      principais padrões, tendências ou oportunidades
+                      observadas. A partir dessa análise, elabore de três a
+                      cinco insights estratégicos relevantes para [público],
+                      explicando o que cada um revela e como pode orientar
+                      decisões práticas. Organize o resultado em uma tabela
+                      com as colunas: Insight | Descrição | Ação Recomendada.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>4.</strong> Produza um roteiro dinâmico de 60
+                      segundos para TikTok ou YouTube Shorts que explique
+                      [tema complexo] de maneira clara e envolvente para
+                      [público]. Divida o conteúdo em blocos de 15 segundos, e
+                      em cada parte descreva a narração principal, o texto que
+                      deve aparecer como legenda e a sugestão visual
+                      correspondente. O objetivo é garantir que o vídeo
+                      mantenha ritmo, clareza e impacto do início ao fim.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>5.</strong> Leia e resuma o artigo sobre
+                      [assunto] em até 150 palavras, destacando as três
+                      descobertas mais relevantes. A partir desse resumo,
+                      proponha cinco temas de debate que incentivem reflexão e
+                      discussão entre [público-alvo]. O objetivo é fornecer
+                      uma visão concisa do conteúdo, ao mesmo tempo que
+                      estimula engajamento crítico e análise profunda.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>6.</strong> Escreva um e-mail profissional e
+                      persuasivo para [destinatário/cargo], solicitando [tipo
+                      de recurso] para [projeto]. Apresente o contexto,
+                      benefícios esperados (ROI), riscos de não aprovação e
+                      conclua com uma chamada para ação direta e convincente.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>7.</strong> Compare [Empresa 1] e [Empresa 2] em
+                      relação a [tema], analisando seu desempenho nos três
+                      critérios mais relevantes. Para cada critério, descreva
+                      os pontos fortes e fracos de cada empresa, apresentando
+                      tudo em uma tabela organizada. Conclua indicando qual
+                      empresa demonstra melhor desempenho global e explique de
+                      forma clara a justificativa para essa avaliação.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>8.</strong> Crie um cronograma de 4 semanas
+                      usando a metodologia Ágil/Scrum para desenvolver
+                      [projeto/produto]. Para cada Sprint, indique o nome, as
+                      tarefas principais, os entregáveis esperados e os
+                      resultados finais planejados.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>9.</strong> Traduza o texto sobre [assunto] do
+                      [idioma] para o português do Brasil, garantindo que o
+                      vocabulário e os exemplos estejam adaptados para
+                      [público-alvo].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>10.</strong> Explique como a Inteligência
+                      Artificial pode transformar [setor], destacando três
+                      aplicações práticas que gerem valor.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content" id="services">
+                <img src="./../public/deepseek.png" class="content-img" alt="DeepSeek image" />
+
+                <div class="infos">
+                  <h1 class="content-title">
+                    Codificação, programação e tarefas de raciocínio lógico
+                    profundo.
+                  </h1>
+
+                  <div class="content-description">
+                    <div class="prompt-item">
+                      <strong>1.</strong> Desenvolva um script em Python
+                      usando Pandas para processar o arquivo [arquivo.csv]
+                      (colunas: [colunas]). Filtre os registros por [coluna
+                      desejada] e calcule a média de [coluna desejada]. Inclua
+                      no script cabeçalho formatado e comentários
+                      explicativos.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>2.</strong> Crie uma fórmula no Excel para
+                      calcular [imposto/índice] em C2, seguindo as regras: A2
+                      &lt; 1000 = 5%; 1000–5000 = 10%; &gt;5000 = 15%. Garanta
+                      que a fórmula funcione ao ser arrastada para outras
+                      linhas.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>3.</strong> Analise o código da função [nome da
+                      função] em [linguagem], identifique o erro que impede
+                      que [função desejada] funcione corretamente e apresente
+                      uma versão corrigida.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>4.</strong> Explique o conceito de
+                      [tecnologia/algoritmo] de maneira acessível, detalhando
+                      sua arquitetura básica, apresentando um caso real de
+                      aplicação e destacando três benefícios principais para
+                      [setor].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>5.</strong> Analise a query SQL [query] usada
+                      para buscar [dados específicos] e proponha três
+                      melhorias de desempenho, como ajustes de índices,
+                      filtros ou joins.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>6.</strong> Avalie diferentes cenários futuros
+                      relacionados a [tema] e identifique impactos,
+                      probabilidades e consequências de cada um.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>7.</strong> Investigue as tendências atuais em
+                      [mercado/área] para apoiar decisões estratégicas,
+                      identificando padrões relevantes e oportunidades
+                      emergentes.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>8.</strong> Analise os dados disponíveis sobre
+                      [processo ou operação] para identificar áreas críticas
+                      que necessitam de intervenção.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>9.</strong> Identifique cinco erros comuns em
+                      [linguagem], mostrando o código incorreto e a versão
+                      corrigida de cada caso.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>10.</strong> Crie um script em Python usando
+                      [biblioteca] para automatizar [tarefa repetitiva],
+                      garantindo tratamento de erros, geração de logs e
+                      comentários explicativos.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content" id="contacts">
+                <img src="./../public/grok.png" class="content-img" alt="Grok image" />
+
+                <div class="infos">
+                  <h1 class="content-title">
+                    Informações atuais, debates críticos e tendências em tempo
+                    real.
+                  </h1>
+
+                  <div class="content-description">
+                    <div class="prompt-item">
+                      <strong>1.</strong> Resuma as três notícias mais
+                      relevantes das últimas 48 horas sobre [tema] em [país],
+                      incluindo para cada uma a fonte, um resumo conciso de
+                      uma linha e o tom geral da matéria.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>2.</strong> Crie um post de até três frases para
+                      X (Twitter) sobre [tema polêmico], utilizando um tom
+                      provocativo e inteligente.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>3.</strong> Analise a reação do público ao
+                      lançamento de [produto/evento] nas últimas 24 horas,
+                      identificando dois sentimentos predominantes.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>4.</strong> Crie cinco perguntas controversas
+                      sobre [tema] que promovam discussões éticas, políticas
+                      ou sociais entre diferentes públicos.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>5.</strong> Resuma os cinco tópicos centrais e
+                      três decisões-chave do [evento/conferência] em [data],
+                      destacando os impactos futuros.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>6.</strong> Crie uma declaração ousada e
+                      provocativa que um CEO do setor de [setor] poderia fazer
+                      sobre [tema].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>7.</strong> Transforme a criação de manchetes em
+                      algo envolvente: desenvolva três manchetes altamente
+                      virais sobre [tema].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>8.</strong> Analise de forma crítica a
+                      [proposta], desenvolvendo quatro argumentos sólidos
+                      contrários a ela.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>9.</strong> Descreva o significado de [jargão
+                      atual] em duas frases curtas e diretas, usando ironia
+                      leve e humor inteligente.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>10.</strong> Explore o cenário atual de [área] e
+                      destaque duas tecnologias emergentes que estão
+                      transformando esse campo.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content" id="location">
+                <img src="./../public/download4.png" class="content-img" alt="Perplexity image"
+                  style="background-color: white" />
+
+                <div class="infos">
+                  <h1 class="content-title">
+                    Pesquisa aprofundada, fontes confiáveis e validação de
+                    informações.
+                  </h1>
+
+                  <div class="content-description">
+                    <div class="prompt-item">
+                      <strong>1.</strong> Realize uma busca atualizada sobre
+                      [tema], identificando três artigos revisados por pares
+                      publicados nos últimos seis meses.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>2.</strong> Realize um levantamento preciso das
+                      cinco principais normas oficiais emitidas pela [órgão
+                      regulador] que se relacionam diretamente a
+                      [tema/produto].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>3.</strong> Avalie a afirmação "[frase]" com
+                      base em evidências de estudos revisados por pares.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>4.</strong> Pesquise o tamanho do mercado global
+                      de [setor], indicando o valor em USD e o CAGR projetado
+                      para os próximos cinco anos.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>5.</strong> Explique [tema técnico] de forma
+                      clara e acessível, estruturando a resposta em três
+                      parágrafos.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>6.</strong> Desenvolva uma proposta de estudo
+                      sobre [tema] com duas metodologias complementares: uma
+                      qualitativa e outra quantitativa.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>7.</strong> Identifique três dados estatísticos
+                      recentes e relevantes de [fonte oficial], relacionados a
+                      [tema ou indicador específico].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>8.</strong> Identifique três autores clássicos
+                      de [tema], destacando para cada um a obra principal e
+                      fornecendo um resumo breve da tese central.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>9.</strong> Apresente a composição técnica de
+                      [produto], destacando quatro componentes principais e
+                      indicando o órgão regulador responsável no Brasil.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>10.</strong> Desenvolva uma tese original para
+                      um artigo sobre [tema], indicando três fontes de
+                      referência que sustentem a ideia.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content" id="about">
+                <img src="./../public/copilot.png" class="content-img" alt="Copilot image" />
+
+                <div class="infos">
+                  <h1 class="content-title">
+                    Produtividade diária, integração com Microsoft Office e
+                    automação de documentos.
+                  </h1>
+
+                  <div class="content-description">
+                    <div class="prompt-item">
+                      <strong>1.</strong> Elabore um roteiro de apresentação
+                      com 10 slides sobre [tema], direcionado para [público].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>2.</strong> Explique de forma prática como criar
+                      um gráfico de funil no Excel utilizando dados de
+                      [contexto].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>3.</strong> Resuma uma reunião sobre [assunto]
+                      em três parágrafos claros e objetivos.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>4.</strong> Crie o sumário e a estrutura de um
+                      guia prático de 5 páginas sobre [tema].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>5.</strong> Elabore um e-mail profissional para
+                      [destinatário] abordando [situação].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>6.</strong> Desenvolva uma fórmula no Excel para
+                      calcular [indicador] utilizando os valores das colunas A
+                      e B.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>7.</strong> Crie uma tabela comparativa com 5
+                      linhas e 4 critérios para avaliar [opções].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>8.</strong> Analise e aprimore uma proposta
+                      sobre [tema], melhorando clareza, concisão e fluidez do
+                      texto.
+                    </div>
+                    <div class="prompt-item">
+                      <strong>9.</strong> Explique como configurar uma
+                      automação no Power Automate para enviar lembretes
+                      diários de [tarefa].
+                    </div>
+                    <div class="prompt-item">
+                      <strong>10.</strong> Crie 5 títulos atrativos e 5
+                      subtópicos H2 para um artigo educativo de blog sobre
+                      [assunto].
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            const tabs = document.querySelectorAll(".tab-btn");
+
+            tabs.forEach((tab) =>
+              tab.addEventListener("click", () => tabClicked(tab))
+            );
+
+            const tabClicked = (tab) => {
+              tabs.forEach((tab) => tab.classList.remove("active"));
+              tab.classList.add("active");
+
+              const contents = document.querySelectorAll(".content");
+              contents.forEach((content) => {
+                content.classList.remove("show");
+                void content.offsetWidth;
+              });
+
+              const contentId = tab.getAttribute("content-id");
+              const content = document.getElementById(contentId);
+
+              content.classList.add("show");
+            };
+
+            const currentActiveTab =
+              document.querySelector(".tab-btn.active");
+            tabClicked(currentActiveTab);
+
+            let list = document.querySelectorAll(".navigation li");
+            function activeLink() {
+              list.forEach((item) => item.classList.remove("hovered"));
+              this.classList.add("hovered");
+            }
+            list.forEach((item) =>
+              item.addEventListener("mouseover", activeLink)
+            );
+
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+              // Menu hover effect
+              let list = document.querySelectorAll(".navigation li");
+              function activeLink() {
+                list.forEach((item) => item.classList.remove("hovered"));
+                this.classList.add("hovered");
+              }
+              list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+              // Menu mobile functionality
+              let toggle = document.querySelector(".menu");
+              let navigation = document.querySelector(".navigation");
+              let main = document.querySelector(".main");
+              let menuOverlay = document.getElementById("menuOverlay");
+              let menuCloseBtn = document.getElementById("menuCloseBtn");
+
+              function isMobile() {
+                return window.innerWidth <= 768;
+              }
+
+              function updateMenuIcon() {
+                const menuIcon = document.querySelector(".menu ion-icon");
+                if (!menuIcon) return;
+
+                if (isMobile()) {
+                  if (navigation.classList.contains("active")) {
+                    menuIcon.setAttribute("name", "close-outline");
+                  } else {
+                    menuIcon.setAttribute("name", "menu-outline");
+                  }
+                } else {
+                  menuIcon.setAttribute("name", "menu-outline");
+                }
+              }
+
+              if (window.innerWidth > 768) {
+                navigation.classList.add("active");
+                main.classList.add("active");
+              } else {
+                navigation.classList.remove("active");
+                if (main) {
+                  main.classList.remove("active");
+                }
+                if (menuOverlay) {
+                  menuOverlay.classList.remove("active");
+                }
+              }
+
+              updateMenuIcon();
+
+              if (toggle && navigation) {
+                toggle.onclick = function () {
+                  navigation.classList.toggle("active");
+                  if (main) {
+                    main.classList.toggle("active");
+                  }
+                  if (menuOverlay) {
+                    menuOverlay.classList.toggle("active");
+                  }
+
+                  updateMenuIcon();
+                };
+              }
+
+              if (menuOverlay) {
+                menuOverlay.onclick = function () {
+                  navigation.classList.remove("active");
+                  if (main) {
+                    main.classList.remove("active");
+                  }
+                  menuOverlay.classList.remove("active");
+
+                  updateMenuIcon();
+                };
+              }
+
+              if (menuCloseBtn) {
+                menuCloseBtn.onclick = function () {
+                  navigation.classList.remove("active");
+                  if (main) {
+                    main.classList.remove("active");
+                  }
+                  if (menuOverlay) {
+                    menuOverlay.classList.remove("active");
+                  }
+
+                  updateMenuIcon();
+                };
+              }
+
+              let menuLinks = document.querySelectorAll(".navigation a");
+              menuLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                  if (isMobile()) {
+                    navigation.classList.remove("active");
+                    if (main) {
+                      main.classList.remove("active");
+                    }
+                    if (menuOverlay) {
+                      menuOverlay.classList.remove("active");
+                    }
+                    updateMenuIcon();
+                  }
+                });
+              });
+
+              // Theme toggle functionality
+              const themeToggle = document.querySelector(".toggle");
+              if (themeToggle) {
+                function applyTheme() {
+                  if (themeToggle.checked) {
+                    document.body.classList.add("light");
+                    localStorage.setItem("theme", "light");
+                  } else {
+                    document.body.classList.remove("light");
+                    localStorage.setItem("theme", "dark");
+                  }
+                }
+
+                function loadTheme() {
+                  const savedTheme = localStorage.getItem("theme");
+                  if (savedTheme === "light") {
+                    themeToggle.checked = true;
+                    document.body.classList.add("light");
+                  } else {
+                    themeToggle.checked = false;
+                    document.body.classList.remove("light");
+                  }
+                }
+
+                loadTheme();
+                themeToggle.addEventListener("change", applyTheme);
+              }
+
+              window.addEventListener("resize", function () {
+                if (window.innerWidth > 768) {
+                  if (navigation && navigation.classList.contains("active")) {
+                    const menuIcon = document.querySelector(".menu ion-icon");
+                    if (menuIcon && menuIcon.getAttribute("name") === "close-outline") {
+                      navigation.classList.remove("active");
+                      if (main) {
+                        main.classList.remove("active");
+                      }
+                      if (menuOverlay) {
+                        menuOverlay.classList.remove("active");
+                      }
+                    }
+                  }
+
+                  if (window.innerWidth > 768) {
+                    navigation.classList.add("active");
+                    main.classList.add("active");
+                  }
+                } else {
+                  if (navigation && navigation.classList.contains("active")) {
+                    navigation.classList.remove("active");
+                    if (main) {
+                      main.classList.remove("active");
+                    }
+                  }
+                }
+                updateMenuIcon();
+              });
+            });
+
+            // -- CHATBOT --
+
+            const chatInput = document.querySelector(".chat-input textarea");
+            const sendChatBtn = document.querySelector(".chat-input span");
+            const chatbox = document.querySelector(".chatbox");
+            const chatbotToggler = document.querySelector(".chatbot-toggler");
+            const chatbotCloseBtn = document.querySelector(".close-btn");
+
+            let userMessage;
+            let isWaitingForResponse = false;
+            const API_KEY = "";
+            const inputInitHeight = chatInput.scrollHeight;
+
+            const updateSendButtonState = () => {
+              sendChatBtn.style.pointerEvents = isWaitingForResponse ? "none" : "auto";
+              sendChatBtn.style.opacity = isWaitingForResponse ? "0.5" : "1";
+            };
+
+            const createChatLi = (message, className) => {
+              const chatLi = document.createElement("li");
+              chatLi.classList.add("chat", className);
+              let chatContent = className === "outgoing" ? `<p></p>` : `<img src="../public/help-ai.jpeg" alt="Logo da HelpAI"><p></p>`
+              chatLi.innerHTML = chatContent;
+              chatLi.querySelector("p").textContent = message;
+              return chatLi;
+            }
+
+            const generateResponse = (incomingChatLi) => {
+              const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+              const messageElement = incomingChatLi.querySelector("p");
+
+              const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  contents: [{
+                    role: "user",
+                    parts: [{
+                      text: `Por favor, responda sem usar nenhuma formatação markdown (sem **, #, *, etc.). Apenas texto simples.\n\n${userMessage}`
+                    }]
+                  }]
+                })
+              }
+
+              fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+                messageElement.textContent = data.candidates[0].content.parts[0].text;
+              }).catch((error) => {
+                messageElement.classList.add("error");
+                messageElement.textContent = "Oops! Algo deu errado. Por favor, tente novamente."
+              }).finally(() => {
+                chatbox.scrollTo(0, chatbox.scrollHeight);
+                isWaitingForResponse = false;
+                updateSendButtonState();
+                chatInput.focus();
+              });
+            }
+
+            const handleChat = () => {
+              if (isWaitingForResponse) return;
+              userMessage = chatInput.value.trim();
+              if (!userMessage) return;
+              chatInput.value = "";
+              chatInput.style.height = `${inputInitHeight}px`;
+              chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+              chatbox.scrollTo(0, chatbox.scrollHeight);
+
+              isWaitingForResponse = true;
+              updateSendButtonState();
+
+              setTimeout(() => {
+                const incomingChatLi = createChatLi("Pensando...", "incoming");
+                chatbox.appendChild(incomingChatLi);
+                chatbox.scrollTo(0, chatbox.scrollHeight);
+                generateResponse(incomingChatLi);
+              }, 600);
+            };
+
+
+            chatInput.addEventListener("input", () => {
+              chatInput.style.height = `${inputInitHeight}px`;
+              chatInput.style.height = `${chatInput.scrollHeight}px`;
+              if (!chatInput.value.trim() && isWaitingForResponse) {
+                sendChatBtn.style.pointerEvents = "none";
+              }
+            });
+
+            chatInput.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800 && !isWaitingForResponse) {
+                e.preventDefault();
+                handleChat();
+              }
+            });
+
+            sendChatBtn.addEventListener("click", handleChat);
+            chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+            chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+            updateSendButtonState();
+          </script>
+        </div>
+      </div>
+
+      <footer class="footer_area">
+        <div class="container-footer">
+          <div class="row">
+            <!-- Coluna 1 -->
+            <div class="footer_col">
+              <p>
+                <b>Nosso site é criativo, moderno e responsivo para qualquer
+                  dispositivo.</b>
+              </p>
+              <div class="copywrite">
+                <p>
+                  Feito por <a href="#"><b>HELP-IA</b></a>
+                </p>
+              </div>
+              <div class="footer_social_area">
+                <a
+                  href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                    class="fab fa-instagram"></i></a>
+                <a
+                  href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g"><i
+                    class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Sobre</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/sobre/sobre.html">Sobre nossa jornada</a></li>
+                <li><a href="/sobre/sobre.html">Nossa equipe</a></li>
+                <li><a href="/sobre/sobre.html">Alunos</a></li>
+                <li><a href="/sobre/sobre.html">Culminância</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Coluna 3 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Navegação</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/destaques/destaques.html">Ias em destaque</a></li>
+                <li><a href="/metodologia/star.html">Metodologia STAR</a></li>
+                <li><a href="/prompts/prompts.html">Melhores prompts</a></li>
+                <li><a href="/sobre/sobre.html">Sobre nós</a></li>
+              </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Contato</b></h5>
+              <ul class="footer_menu">
+                <li>
+                  <a
+                    href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g">Tik
+                    Tok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+</body>
+
+</html>

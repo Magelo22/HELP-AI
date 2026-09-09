@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help-IA</title>
+  <link rel="stylesheet" href="/star.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <link rel="icon" href="../public/help-ai.jpeg" type="image/png">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+      <div class="menu-close-btn" id="menuCloseBtn">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <img src="../public/help-ia-removebg-preview.png" alt="" id="img-help" />
+            </span>
+            <span class="title"> Help-IA</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/index.html">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="title">Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="/destaques/destaques.html">
+            <span class="icon">
+              <ion-icon name="bookmarks-outline"></ion-icon>
+            </span>
+            <span class="title">IAs em destaque</span>
+          </a>
+        </li>
+        <li>
+          <a href="/metodologia/star.html">
+            <span class="icon">
+              <ion-icon name="star-outline"></ion-icon>
+            </span>
+            <span class="title">Metodologia STAR</span>
+          </a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/prompts/prompts.html">
+            <span class="icon">
+              <ion-icon name="code-working-outline"></ion-icon>
+            </span>
+            <span class="title">Melhores prompts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/sobre/sobre.html">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">Sobre nós</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>HelpAi - Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <img src="../public/help-ai.jpeg" alt="Logo da HelpAI">
+          <p>Olá, bem vindo ao chatbot da HelpAi<br>Como posso te ajudar? </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Envie uma mensagem..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined"> send</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input checked="" type="checkbox" class="toggle" />
+            <span class="slider"></span>
+            <span class="card-side"></span>
+          </label>
+        </div>
+      </div>
+
+      <section class="sobre-section">
+        <div class="sobre-img">
+          <img src="../public/star-removebg-preview.png" alt="Equipe Help-IA" />
+        </div>
+
+        <div class="sobre-content">
+          <h2>Metodologia STAR para Prompts</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A metodologia STAR é uma estrutura poderosa para formular prompts e instruções
+            para sistemas de IA. Ela organiza sua solicitação em quatro partes, garantindo clareza, contexto e
+            direcionamento, o que resulta em respostas mais precisas, relevantes e úteis. Dessa forma, o prompt fica
+            estruturado da seguinte maneira:
+          </p>
+        </div>
+      </section>
+
+      <section class="dupla">
+        <div class="lado-esquerdo">
+          <div class="sobre-contente">
+            <h2>S – Situação</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estabeleça o contexto, o cenário ou o problema de fundo. Defina onde e por
+              que a ação é necessária.
+            </p>
+            <p>
+              <strong>Objetivo:</strong> Fornecer à IA o pano de fundo necessário para entender a situação e agir de
+              forma contextualizada.
+            </p>
+            <p>
+              <strong>Exemplo:</strong> “Você é um consultor de marketing digital. Nossa empresa de e-commerce, que
+              vende produtos sustentáveis, percebeu uma queda de 15% no engajamento nas redes sociais no último
+              trimestre.”
+            </p>
+          </div>
+        </div>
+
+        <div class="lado-direito">
+          <div class="sobre-contente">
+            <h2>T – Tarefa</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Especifique a responsabilidade, o objetivo principal ou o desafio concreto
+              que precisa ser resolvido
+              dentro daquela situação.
+            </p>
+            <p>
+              <strong>Objetivo:</strong> Deixar claro qual é a missão específica ou o resultado esperado da
+              interação.
+            </p>
+            <p>
+              <strong>Exemplo:</strong> “Sua tarefa é analisar possíveis causas para essa queda e propor um plano de
+              conteúdo para o próximo mês que aumente o engajamento.”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dupla">
+        <div class="lado-esquerdo">
+          <div class="sobre-contente">
+            <h2>A – Ação</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detalhe os passos, abordagens ou métodos que devem ser utilizados. Peça à IA
+              para simular um processo ou
+              aplicar um framework específico.
+            </p>
+            <p>
+              <strong>Objetivo:</strong> Guiar o raciocínio da IA, direcionando como ela deve executar a tarefa para
+              gerar a resposta mais adequada.
+            </p>
+            <p>
+              <strong>Exemplo:</strong> “Para isso, realize uma análise SWOT rápida da nossa presença atual. Em seguida,
+              crie um calendário de postagens com: 1) três temas centrais, 2) o formato de conteúdo para cada um (ex.:
+              vídeo, carrossel) e 3) sugestões de hashtags.”
+            </p>
+          </div>
+        </div>
+
+        <div class="lado-direito">
+          <div class="sobre-contente">
+            <h2>R – Resultado</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defina o formato, o escopo e os critérios da resposta desejada. Especifique
+              como você quer que a
+              informação seja entregue.
+            </p>
+            <p>
+              <strong>Objetivo:</strong> Garantir que a saída (output) da IA esteja no formato mais útil e aplicável
+              para você (ex.: tabela, lista, relatório, tom específico).
+            </p>
+            <p>
+              <strong>Exemplo:</strong> “Apresente o plano final em formato de tabela, com colunas para data, tema,
+              formato e hashtags. Inclua uma breve justificativa para cada tema escolhido.”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sobre-section">
+        <div class="sobre-content">
+          <h2>Como Aplicar a Metodologia STAR em Prompts</h2>
+
+          <p><strong>✔ Para Instruções Complexas</strong></p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use STAR para desdobrar solicitações amplas (ex.: "ajude com o marketing") em
+            instruções estruturadas,
+            garantindo que a IA não precise adivinhar o contexto ou o formato.
+          </p>
+
+          <p><strong>✔ Para Análises e Relatórios</strong></p>
+          <p>
+            Organize seu prompt seguindo a sequência STAR quando precisar de uma análise estruturada. Isso ajuda a IA a
+            processar a informação de forma lógica e completa.
+          </p>
+
+          <p><strong>✔ Para Criatividade e Brainstorming Direcionados</strong></p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ao definir uma situação clara (S) e um tarefa específica (T), você pode
+            solicitar ações (A) dentro de um
+            escopo definido, recebendo resultados (R) mais relevantes e aplicáveis do que com um pedido vago.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Dica -->
+      <section class="sobre-section">
+        <div class="sobre-content">
+          <h2>Dica Prática para Formular Prompts</h2>
+          <p>Sempre pense na sequência: Contexto → Objetivo → Processo → Formato da Resposta.</p>
+        </div>
+      </section>
+
+      <footer class="footer_area">
+        <div class="container-footer">
+          <div class="row">
+            <!-- Coluna 1 -->
+            <div class="footer_col">
+              <p>
+                <b>Nosso site é criativo, moderno e responsivo para qualquer
+                  dispositivo.</b>
+              </p>
+              <div class="copywrite">
+                <p>
+                  Feito por <a href="#"><b>HELP-IA</b></a>
+                </p>
+              </div>
+              <div class="footer_social_area">
+                <a
+                  href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                    class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Sobre</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/sobre/sobre.html">Sobre nossa jornada</a></li>
+                <li><a href="/sobre/sobre.html">Nossa equipe</a></li>
+                <li><a href="/sobre/sobre.html">Alunos</a></li>
+                <li><a href="/sobre/sobre.html">Culminância</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Coluna 3 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Navegação</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/destaques/destaques.html">Ias em destaque</a></li>
+                <li><a href="/metodologia/star.html">Metodologia STAR</a></li>
+                <li><a href="/prompts/prompts.html">Melhores prompts</a></li>
+                <li><a href="/sobre/sobre.html">Sobre nós</a></li>
+              </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Contato</b></h5>
+              <ul class="footer_menu">
+                <li>
+                  <a
+                    href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g">Tik
+                    Tok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu hover effect
+      let list = document.querySelectorAll(".navigation li");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+      // Menu mobile functionality
+      let toggle = document.querySelector(".menu");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+      let menuOverlay = document.getElementById("menuOverlay");
+      let menuCloseBtn = document.getElementById("menuCloseBtn");
+
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
+      function updateMenuIcon() {
+        const menuIcon = document.querySelector(".menu ion-icon");
+        if (!menuIcon) return;
+
+        if (isMobile()) {
+          if (navigation.classList.contains("active")) {
+            menuIcon.setAttribute("name", "close-outline");
+          } else {
+            menuIcon.setAttribute("name", "menu-outline");
+          }
+        } else {
+          menuIcon.setAttribute("name", "menu-outline");
+        }
+      }
+
+      if (window.innerWidth > 768) {
+        navigation.classList.add("active");
+        main.classList.add("active");
+      } else {
+        navigation.classList.remove("active");
+        if (main) {
+          main.classList.remove("active");
+        }
+        if (menuOverlay) {
+          menuOverlay.classList.remove("active");
+        }
+      }
+
+      updateMenuIcon();
+
+      if (toggle && navigation) {
+        toggle.onclick = function () {
+          navigation.classList.toggle("active");
+          if (main) {
+            main.classList.toggle("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.toggle("active");
+          }
+
+          updateMenuIcon();
+        };
+      }
+
+      if (menuOverlay) {
+        menuOverlay.onclick = function () {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          menuOverlay.classList.remove("active");
+
+          updateMenuIcon();
+        };
+      }
+
+      if (menuCloseBtn) {
+        menuCloseBtn.onclick = function () {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.remove("active");
+          }
+
+          updateMenuIcon();
+        };
+      }
+
+      let menuLinks = document.querySelectorAll(".navigation a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          if (isMobile()) {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+            if (menuOverlay) {
+              menuOverlay.classList.remove("active");
+            }
+            updateMenuIcon();
+          }
+        });
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.querySelector(".toggle");
+      if (themeToggle) {
+        function applyTheme() {
+          if (themeToggle.checked) {
+            document.body.classList.add("light");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.body.classList.remove("light");
+            localStorage.setItem("theme", "dark");
+          }
+        }
+
+        function loadTheme() {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light") {
+            themeToggle.checked = true;
+            document.body.classList.add("light");
+          } else {
+            themeToggle.checked = false;
+            document.body.classList.remove("light");
+          }
+        }
+
+        loadTheme();
+        themeToggle.addEventListener("change", applyTheme);
+      }
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          if (navigation && navigation.classList.contains("active")) {
+            const menuIcon = document.querySelector(".menu ion-icon");
+            if (menuIcon && menuIcon.getAttribute("name") === "close-outline") {
+              navigation.classList.remove("active");
+              if (main) {
+                main.classList.remove("active");
+              }
+              if (menuOverlay) {
+                menuOverlay.classList.remove("active");
+              }
+            }
+          }
+
+          if (window.innerWidth > 768) {
+            navigation.classList.add("active");
+            main.classList.add("active");
+          }
+        } else {
+          if (navigation && navigation.classList.contains("active")) {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+          }
+        }
+        updateMenuIcon();
+      });
+    });
+
+    // -- CHATBOT --
+
+    const chatInput = document.querySelector(".chat-input textarea");
+    const sendChatBtn = document.querySelector(".chat-input span");
+    const chatbox = document.querySelector(".chatbox");
+    const chatbotToggler = document.querySelector(".chatbot-toggler");
+    const chatbotCloseBtn = document.querySelector(".close-btn");
+
+    let userMessage;
+    let isWaitingForResponse = false;
+    const API_KEY = "";
+    const inputInitHeight = chatInput.scrollHeight;
+
+    const updateSendButtonState = () => {
+      sendChatBtn.style.pointerEvents = isWaitingForResponse ? "none" : "auto";
+      sendChatBtn.style.opacity = isWaitingForResponse ? "0.5" : "1";
+    };
+
+    const createChatLi = (message, className) => {
+      const chatLi = document.createElement("li");
+      chatLi.classList.add("chat", className);
+      let chatContent = className === "outgoing" ? `<p></p>` : `<img src="../public/help-ai.jpeg" alt="Logo da HelpAI"><p></p>`
+      chatLi.innerHTML = chatContent;
+      chatLi.querySelector("p").textContent = message;
+      return chatLi;
+    }
+
+    const generateResponse = (incomingChatLi) => {
+      const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+      const messageElement = incomingChatLi.querySelector("p");
+
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{
+            role: "user",
+            parts: [{
+              text: `Por favor, responda sem usar nenhuma formatação markdown (sem **, #, *, etc.). Apenas texto simples.\n\n${userMessage}`
+            }]
+          }]
+        })
+      }
+
+      fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+        messageElement.textContent = data.candidates[0].content.parts[0].text;
+      }).catch((error) => {
+        messageElement.classList.add("error");
+        messageElement.textContent = "Oops! Algo deu errado. Por favor, tente novamente."
+      }).finally(() => {
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+        isWaitingForResponse = false;
+        updateSendButtonState();
+        chatInput.focus();
+      });
+    }
+
+    const handleChat = () => {
+      if (isWaitingForResponse) return;
+      userMessage = chatInput.value.trim();
+      if (!userMessage) return;
+      chatInput.value = "";
+      chatInput.style.height = `${inputInitHeight}px`;
+      chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+      chatbox.scrollTo(0, chatbox.scrollHeight);
+
+      isWaitingForResponse = true;
+      updateSendButtonState();
+
+      setTimeout(() => {
+        const incomingChatLi = createChatLi("Pensando...", "incoming");
+        chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+        generateResponse(incomingChatLi);
+      }, 600);
+    };
+
+
+    chatInput.addEventListener("input", () => {
+      chatInput.style.height = `${inputInitHeight}px`;
+      chatInput.style.height = `${chatInput.scrollHeight}px`;
+      if (!chatInput.value.trim() && isWaitingForResponse) {
+        sendChatBtn.style.pointerEvents = "none";
+      }
+    });
+
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800 && !isWaitingForResponse) {
+        e.preventDefault();
+        handleChat();
+      }
+    });
+
+    sendChatBtn.addEventListener("click", handleChat);
+    chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+    chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+    updateSendButtonState();
+  </script>
+</body>
+
+</html>

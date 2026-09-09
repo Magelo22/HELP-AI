@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help-IA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="destaque.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="icon" href="public/help-ai.jpeg" type="image/png" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+      <div class="menu-close-btn" id="menuCloseBtn">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <img src="public/help-ia-removebg-preview.png" alt="" id="img-help" />
+            </span>
+            <span class="title"> Help-IA</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/index.html">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="title">Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="/destaques/destaques.html">
+            <span class="icon">
+              <ion-icon name="bookmarks-outline"></ion-icon>
+            </span>
+            <span class="title">IAs em destaque</span>
+          </a>
+        </li>
+        <li>
+          <a href="/metodologia/star.html">
+            <span class="icon">
+              <ion-icon name="star-outline"></ion-icon>
+            </span>
+            <span class="title">Metodologia STAR</span>
+          </a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/prompts/prompts.html">
+            <span class="icon">
+              <ion-icon name="code-working-outline"></ion-icon>
+            </span>
+            <span class="title">Melhores prompts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/sobre/sobre.html">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">Sobre nós</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input checked="" type="checkbox" class="toggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="chatbot">
+        <header>
+          <h2>HelpAi - Chatbot</h2>
+          <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+          <li class="chat incoming">
+            <img src="public/help-ai.jpeg" alt="Logo da HelpAI" />
+            <p>Olá, bem vindo ao chatbot da HelpAi<br />Como posso te ajudar?
+            </p>
+          </li>
+        </ul>
+        <div class="chat-input">
+          <textarea placeholder="Envie uma mensagem..." required></textarea>
+          <span id="send-btn" class="material-symbols-outlined"> send</span>
+        </div>
+      </div>
+
+      <section id="content">
+        <div id="home">
+          <div class="shape"></div>
+          <div id="cta">
+            <h1 class="title">
+              Seu Portal para o <span> Futuro</span> Inteligente
+            </h1>
+            <p class="description">
+              O <strong>HELP IA</strong> é um projeto focado em desmistificar
+              a Inteligência Artificial. A nossa missão é mostrar, com
+              exemplos reais, como esta tecnologia já pode ser uma ferramenta
+              poderosa no seu dia a dia.
+            </p>
+
+            <div id="cta_buttons">
+              <a href="#" class="btn-default" id="openModalBtn">Perguntas frequentes</a>
+            </div>
+
+            <div class="modal" id="faqModal">
+              <div class="modal-content">
+                <span class="close-btn" id="closeModalBtn">&times;</span>
+                <h2>Perguntas Frequentes</h2>
+
+                <div class="faq-item">
+                  <button class="faq-question">O que é o projeto?</button>
+                  <div class="faq-answer">
+                    <p>
+                      O projeto é uma iniciativa criada para ajudar estudantes
+                      e desenvolvedores.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">Quem pode participar?</button>
+                  <div class="faq-answer">
+                    <p>
+                      Qualquer pessoa interessada em aprender ou contribuir.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    Como posso entrar em contato?
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Você pode usar nosso formulário de contato ou redes
+                      sociais.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">O projeto é gratuito?</button>
+                  <div class="faq-answer">
+                    <p>Sim! Todo conteúdo oferecido é totalmente gratuito.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-media-buttons">
+              <a
+                href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g">
+                <ion-icon name="logo-tiktok"></ion-icon>
+              </a>
+              <a href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div id="banner">
+            <img src="public/download (1).png" alt="" />
+          </div>
+        </div>
+
+        <section class="info-section">
+          <div class="info-img">
+            <img src="public/IA.png" alt="Imagem representando uma IA" />
+          </div>
+          <div class="info-content">
+            <h2>O que é Inteligência Artificial (IA)?</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Imagine um assistente digital que
+              pode aprender, entender e ajudar como uma pessoa, mas que
+              funciona através do computador. Isso é a Inteligência
+              Artificial! São programas que conseguem realizar tarefas
+              inteligentes como conversar, reconhecer imagens, sugerir músicas
+              ou ajudar nos estudos. A IA não é magia - é tecnologia criada
+              para ampliar nossa capacidade de resolver problemas do dia a
+              dia.
+            </p>
+          </div>
+        </section>
+
+        <section class="info-section">
+          <div class="info-content">
+            <h2>Como funciona a IA?</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Inteligência Artificial é uma
+              tecnologia que cria programas capazes de realizar tarefas
+              inteligentes, como conversar, reconhecer imagens, sugerir
+              conteúdos ou auxiliar nos estudos. Ela funciona como um
+              assistente digital que amplia a capacidade humana de resolver
+              problemas, não sendo mágica, mas sim uma ferramenta prática.
+            </p>
+          </div>
+          <div class="info-img">
+            <img src="public/2-removebg-preview.png" alt="IA aprendendo com diversos exemplos" />
+          </div>
+        </section>
+
+        <section class="info-section">
+          <div class="info-img">
+            <img src="public/1-removebg-preview.png" alt="Pessoa sendo mais produtiva com ajuda da IA" id="pessoa" />
+          </div>
+          <div class="info-content">
+            <h2>Por que usar Inteligência Artificial?</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A IA aprende de forma semelhante a
+              um estudante, analisando uma grande quantidade de exemplos (como
+              fotos ou conversas) para identificar padrões e usar esse
+              conhecimento. É comparável a um amigo extremamente
+              bem-informado, sempre pronto para ajudar com base no que
+              aprendeu.
+            </p>
+          </div>
+        </section>
+
+        <section class="info-section">
+          <div class="info-content">
+            <h2>O que é um PROMPT?</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O prompt é a pergunta ou instrução
+              dada à IA para iniciar a interação. É o comando que direciona a
+              assistente, podendo ser simples ("Explique matemática") ou
+              detalhado. A qualidade da resposta depende diretamente da
+              clareza e especificidade do prompt.
+            </p>
+          </div>
+          <div class="prompt-box">
+            <h3 class="typing-effect">
+              Me ajude a escrever uma carta para meu primeiro emprego
+            </h3>
+
+            <div class="actions">
+              <button class="action-btn delete">
+                <ion-icon name="trash-bin-outline"></ion-icon>
+              </button>
+              <button class="action-btn send">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="info-section-prompt info-section-side-by-side">
+          <div class="info-content">
+            <h3>O que um bom prompt deve ter?</h3>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um bom prompt é claro e
+              específico. Imagine que você está pedindo ajuda a um amigo:
+              quanto mais detalhes você der, melhor ele poderá ajudar! Um bom
+              prompt deve ter:
+              <br /><br />
+              • <strong>Clareza</strong>: Diga exatamente o que precisa<br />
+              • <strong>Contexto</strong>: Explique a situação<br />
+              • <strong>Detalhes</strong>: Especifique formato, tom ou
+              estilo<br />
+              • <strong>Exemplo</strong>: Mostre o que você espera<br />
+              • <strong>Limites</strong>: Diga o que não deve ser feito
+            </p>
+          </div>
+          <div class="info-content">
+            <h3>Por que usar prompts bem feitos?</h3>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fazer bons prompts é a chave para
+              ter melhores resultados! É a diferença entre receber uma
+              resposta genérica e uma resposta perfeita para sua necessidade.
+              Com prompts bem feitos, você economiza tempo, evita frustrações
+              e aproveita ao máximo o potencial da IA. É como aprender a fazer
+              as perguntas certas - quando você domina essa habilidade, a IA
+              se torna muito mais útil no seu dia a dia, nos estudos e no
+              trabalho.
+            </p>
+          </div>
+        </section>
+
+        <section class="info-section-prompt info-section-centered">
+          <div class="info-content">
+            <h2>Como Construir um Prompt Eficaz usando o Método STAR</h2>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O método STAR (Situação, Tarefa,
+              Ação, Resultado) é uma estrutura poderosa para criar prompts
+              claros e objetivos. Vamos construir um prompt completo passo a
+              passo sobre
+              <strong>"como pesquisar sobre a explicação de conteúdos"</strong>. Cada etapa corresponde a uma letra da
+              sigla STAR.
+            </p>
+          </div>
+        </section>
+
+        <section class="info-section-prompt info-section-side-by-side">
+          <div class="info-content">
+            <h3><strong>S</strong> - Situação <span>(Contexto)</span> </h3>
+            <p>
+              Contextualize o cenário e o seu nível de conhecimento.
+              <br /><br />
+              <strong>Para nosso exemplo de pesquisa:</strong><br />
+              <em>"Sou um estudante universitário do terceiro ano de
+                Engenharia. Preciso entender profundamente o conceito de
+                'machine learning supervisionado' para um trabalho acadêmico.
+                Meu conhecimento atual é básico - sei apenas que é um tipo de
+                inteligência artificial que usa dados rotulados."</em>
+            </p>
+          </div>
+          <div class="info-content">
+            <h3><strong>T</strong> - Tarefa <span>(Objetivo Específico)</span></h3>
+            <p>
+              Defina com precisão o objetivo ou o que precisa ser feito.
+              <br /><br />
+              <strong>Para nosso exemplo de pesquisa:</strong><br />
+              <em>"Quero que você me ajude a criar uma estratégia de pesquisa
+                eficaz para entender esse conceito. Preciso saber: 1) Onde
+                buscar informações confiáveis, 2) Quais aspectos específicos
+                devo estudar, 3) Como organizar minha pesquisa."</em>
+            </p>
+          </div>
+        </section>
+
+        <section class="info-section-prompt info-section-side-by-side">
+          <div class="info-content">
+            <h3><strong>A</strong> - Ação <span>(Instruções Detalhadas)</span> </h3>
+            <p>
+              Detalhe as instruções, incluindo formato, estilo e estrutura
+              desejados para a resposta.
+              <br /><br />
+              <strong>Para nosso exemplo de pesquisa:</strong><br />
+              <em>"Forneça um plano de pesquisa passo a passo com as seguintes
+                seções: 1. Fontes Recomendadas (separando em acadêmicas,
+                introdutórias e avançadas) 2. Conceitos-Chave para focar
+                (lista em ordem de importância) 3. Metodologia de estudo (como
+                abordar cada fonte) 4. Verificação de compreensão (como saber
+                se entendi bem o tema) Use um tom didático mas preciso, como
+                um tutor experiente. Formate em tópicos claros com exemplos
+                práticos."</em>
+            </p>
+          </div>
+          <div class="info-content">
+            <h3><strong>R</strong> - Resultado <span>(Expectativa Final)</span></h3>
+            <p>
+              Descreva o resultado esperado, critérios de qualidade,
+              limitações e o formato final.
+              <br /><br />
+              <strong>Para nosso exemplo de pesquisa:</strong><br />
+              <em>"Ao final, quero ter um guia prático que eu possa seguir nas
+                próximas 2 semanas. O resultado deve ser acionável, com
+                recursos que estejam disponíveis gratuitamente online. Evite
+                sugerir livros muito caros ou acesso a paywalls acadêmicos.
+                Inclua um cronograma sugerido de estudo."</em>
+            </p>
+          </div>
+        </section>
+
+        <section class="info-section-prompt info-section-centered">
+          <div class="info-content">
+            <h3 class="typing-effect">
+              Pronto, prompt criado seguindo a metodologia STAR, basta copiar
+              cada passo e escrever como um único prompt.
+            </h3>
+          </div>
+        </section>
+
+        <section class="sobre-section">
+          <div class="sobre-divider"></div>
+
+          <h3 class="examples-title">
+            A IA na sua Rotina: Exemplos Práticos
+          </h3>
+
+          <div class="detailed-examples-grid">
+            <div class="example-card">
+              <div class="example-icon">
+                <ion-icon name="fast-food-outline"></ion-icon>
+              </div>
+              <div class="example-card-content card-yellow">
+                <h4 class="example-card-title">Planejar o seu Jantar</h4>
+                <p class="example-card-desc">
+                  Abra uma IA e <strong>diga:</strong> "Tenho frango, arroz e brócolos no
+                  frigorífico. Dá-me 3 ideias rápidas para um jantar saboroso
+                  com estes ingredientes?"
+                </p>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-icon">
+                <ion-icon name="airplane-outline"></ion-icon>
+              </div>
+              <div class="example-card-content card-blue">
+                <h4 class="example-card-title">Criar um Roteiro de Viagem</h4>
+                <p class="example-card-desc">
+                  <strong>Peça:</strong> "Vou ao Porto por 3 dias. Quero focar-me em cultura e
+                  boa comida. Monte um roteiro dia a dia para mim, incluindo
+                  sugestões de restaurantes."
+                </p>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-icon">
+                <ion-icon name="document-text-outline"></ion-icon>
+              </div>
+              <div class="example-card-content card-green">
+                <h4 class="example-card-title">E-mails Difíceis</h4>
+                <p class="example-card-desc">
+                  <strong>Solicite:</strong> "Preciso pedir ao meu chefe para trabalhar
+                  remotamente às sextas. Escreva um e-mail profissional e
+                  educado a explicar os motivos."
+                </p>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-icon">
+                <ion-icon name="videocam-outline"></ion-icon>
+              </div>
+              <div class="example-card-content card-purple">
+                <h4 class="example-card-title">Cinematográfico</h4>
+                <p class="example-card-desc">
+                  <strong>Peça:</strong> "Preciso de uma sinopse profissional para um filme de
+                  ficção científica sobre viagens no tempo. Crie algo
+                  chamativo e original."
+                </p>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-icon">
+                <ion-icon name="id-card-outline"></ion-icon>
+              </div>
+              <div class="example-card-content card-purple2">
+                <h4 class="example-card-title">Assistentes virtuais</h4>
+                <p class="example-card-desc">
+                  <strong>Solicite:</strong> "Quero automatizar respostas do WhatsApp da minha
+                  loja de roupas. Crie mensagens para: boas-vindas, dúvidas
+                  frequentes e encerramento."
+                </p>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </div>
+              <div class="example-card-content card-red">
+                <h4 class="example-card-title">Redes sociais</h4>
+                <p class="example-card-desc">
+                  <strong>Coloque:</strong> "Preciso de uma legenda envolvente para Instagram
+                  sobre organização pessoal. Escreva algo curto, motivacional
+                  e objetiva."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer_area">
+        <div class="container-footer">
+          <div class="row">
+            <!-- Coluna 1 -->
+            <div class="footer_col">
+              <p>
+                <b>Nosso site é criativo, moderno e responsivo para qualquer
+                  dispositivo.</b>
+              </p>
+              <div class="copywrite">
+                <p>
+                  Feito por <a href="#"><b>HELP-IA</b></a>
+                </p>
+              </div>
+              <div class="footer_social_area">
+                <a
+                  href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                    class="fab fa-instagram"></i></a>
+                <a
+                  href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g"><i
+                    class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Sobre</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/sobre/sobre.html">Sobre nossa jornada</a></li>
+                <li><a href="/sobre/sobre.html">Nossa equipe</a></li>
+                <li><a href="/sobre/sobre.html">Alunos</a></li>
+                <li><a href="/sobre/sobre.html">Culminância</a></li>
+              </ul>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Navegação</b></h5>
+              <ul class="footer_menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/destaques/destaques.html">Ias em destaque</a></li>
+                <li><a href="/metodologia/star.html">Metodologia STAR</a></li>
+                <li><a href="/prompts/prompts.html">Melhores prompts</a></li>
+                <li><a href="/sobre/sobre.html">Sobre nós</a></li>
+              </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="footer_col">
+              <h5 class="widget-title"><b>Contato</b></h5>
+              <ul class="footer_menu">
+                <li>
+                  <a
+                    href="https://www.instagram.com/help_ai.ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@help.ia?_t=ZM-904nKK8KbRw&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeF8BYD0gJ1wviBMS1MwxtBGiB-Sj6GtRune1Oqf4u2Ys1MBwQyBer3gGqcmw_aem_x0XeFfxB5ZrgQNRqToCX_g">Tik
+                    Tok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu hover effect
+      let list = document.querySelectorAll(".navigation li");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+      // Menu mobile functionality
+      let toggle = document.querySelector(".menu");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+      let menuOverlay = document.getElementById("menuOverlay");
+      let menuCloseBtn = document.getElementById("menuCloseBtn");
+
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
+      function updateMenuIcon() {
+        const menuIcon = document.querySelector(".menu ion-icon");
+        if (!menuIcon) return;
+
+        if (isMobile()) {
+          if (navigation.classList.contains("active")) {
+            menuIcon.setAttribute("name", "close-outline");
+          } else {
+            menuIcon.setAttribute("name", "menu-outline");
+          }
+        } else {
+          menuIcon.setAttribute("name", "menu-outline");
+        }
+      }
+
+      if (window.innerWidth > 768) {
+        navigation.classList.add("active");
+        main.classList.add("active");
+      } else {
+        navigation.classList.remove("active");
+        if (main) {
+          main.classList.remove("active");
+        }
+        if (menuOverlay) {
+          menuOverlay.classList.remove("active");
+        }
+      }
+
+      updateMenuIcon();
+
+      if (toggle && navigation) {
+        toggle.onclick = function () {
+          navigation.classList.toggle("active");
+          if (main) {
+            main.classList.toggle("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.toggle("active");
+          }
+
+          updateMenuIcon();
+        };
+      }
+
+      if (menuOverlay) {
+        menuOverlay.onclick = function () {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          menuOverlay.classList.remove("active");
+
+          updateMenuIcon();
+        };
+      }
+
+      if (menuCloseBtn) {
+        menuCloseBtn.onclick = function () {
+          navigation.classList.remove("active");
+          if (main) {
+            main.classList.remove("active");
+          }
+          if (menuOverlay) {
+            menuOverlay.classList.remove("active");
+          }
+
+          updateMenuIcon();
+        };
+      }
+
+      let menuLinks = document.querySelectorAll(".navigation a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          if (isMobile()) {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+            if (menuOverlay) {
+              menuOverlay.classList.remove("active");
+            }
+            updateMenuIcon();
+          }
+        });
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.querySelector(".toggle");
+      if (themeToggle) {
+        function applyTheme() {
+          if (themeToggle.checked) {
+            document.body.classList.add("light");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.body.classList.remove("light");
+            localStorage.setItem("theme", "dark");
+          }
+        }
+
+        function loadTheme() {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light") {
+            themeToggle.checked = true;
+            document.body.classList.add("light");
+          } else {
+            themeToggle.checked = false;
+            document.body.classList.remove("light");
+          }
+        }
+
+        loadTheme();
+        themeToggle.addEventListener("change", applyTheme);
+      }
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          if (navigation && navigation.classList.contains("active")) {
+            const menuIcon = document.querySelector(".menu ion-icon");
+            if (
+              menuIcon &&
+              menuIcon.getAttribute("name") === "close-outline"
+            ) {
+              navigation.classList.remove("active");
+              if (main) {
+                main.classList.remove("active");
+              }
+              if (menuOverlay) {
+                menuOverlay.classList.remove("active");
+              }
+            }
+          }
+
+          if (window.innerWidth > 768) {
+            navigation.classList.add("active");
+            main.classList.add("active");
+          }
+        } else {
+          if (navigation && navigation.classList.contains("active")) {
+            navigation.classList.remove("active");
+            if (main) {
+              main.classList.remove("active");
+            }
+          }
+        }
+        updateMenuIcon();
+      });
+    });
+
+    // -- CHATBOT --
+
+    const chatInput = document.querySelector(".chat-input textarea");
+    const sendChatBtn = document.querySelector(".chat-input span");
+    const chatbox = document.querySelector(".chatbox");
+    const chatbotToggler = document.querySelector(".chatbot-toggler");
+    const chatbotCloseBtn = document.querySelector(".close-btn");
+
+    let userMessage;
+    let isWaitingForResponse = false;
+    const API_KEY = "";
+    const inputInitHeight = chatInput.scrollHeight;
+
+    const updateSendButtonState = () => {
+      sendChatBtn.style.pointerEvents = isWaitingForResponse
+        ? "none"
+        : "auto";
+      sendChatBtn.style.opacity = isWaitingForResponse ? "0.5" : "1";
+    };
+
+    const createChatLi = (message, className) => {
+      const chatLi = document.createElement("li");
+      chatLi.classList.add("chat", className);
+      let chatContent =
+        className === "outgoing"
+          ? `<p></p>`
+          : `<img src="public/help-ai.jpeg" alt="Logo da HelpAI"><p></p>`;
+      chatLi.innerHTML = chatContent;
+      chatLi.querySelector("p").textContent = message;
+      return chatLi;
+    };
+
+    const generateResponse = (incomingChatLi) => {
+      const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+      const messageElement = incomingChatLi.querySelector("p");
+
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: `Por favor, responda sem usar nenhuma formatação markdown (sem **, #, *, etc.). Apenas texto simples.\n\n${userMessage}`,
+                },
+              ],
+            },
+          ],
+        }),
+      };
+
+      fetch(API_URL, requestOptions)
+        .then((res) => res.json())
+        .then((data) => {
+          messageElement.textContent =
+            data.candidates[0].content.parts[0].text;
+        })
+        .catch((error) => {
+          messageElement.classList.add("error");
+          messageElement.textContent =
+            "Oops! Algo deu errado. Por favor, tente novamente.";
+        })
+        .finally(() => {
+          chatbox.scrollTo(0, chatbox.scrollHeight);
+          isWaitingForResponse = false;
+          updateSendButtonState();
+          chatInput.focus();
+        });
+    };
+
+    const handleChat = () => {
+      if (isWaitingForResponse) return;
+      userMessage = chatInput.value.trim();
+      if (!userMessage) return;
+      chatInput.value = "";
+      chatInput.style.height = `${inputInitHeight}px`;
+      chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+      chatbox.scrollTo(0, chatbox.scrollHeight);
+
+      isWaitingForResponse = true;
+      updateSendButtonState();
+
+      setTimeout(() => {
+        const incomingChatLi = createChatLi("Pensando...", "incoming");
+        chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+        generateResponse(incomingChatLi);
+      }, 600);
+    };
+
+    chatInput.addEventListener("input", () => {
+      chatInput.style.height = `${inputInitHeight}px`;
+      chatInput.style.height = `${chatInput.scrollHeight}px`;
+      if (!chatInput.value.trim() && isWaitingForResponse) {
+        sendChatBtn.style.pointerEvents = "none";
+      }
+    });
+
+    chatInput.addEventListener("keydown", (e) => {
+      if (
+        e.key === "Enter" &&
+        !e.shiftKey &&
+        window.innerWidth > 800 &&
+        !isWaitingForResponse
+      ) {
+        e.preventDefault();
+        handleChat();
+      }
+    });
+
+    sendChatBtn.addEventListener("click", handleChat);
+    chatbotCloseBtn.addEventListener("click", () =>
+      document.body.classList.remove("show-chatbot")
+    );
+    chatbotToggler.addEventListener("click", () =>
+      document.body.classList.toggle("show-chatbot")
+    );
+
+    updateSendButtonState();
+
+    // ========== MODAL FAQ (MANTIDO IGUAL) ==========
+    const modal = document.getElementById("faqModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+
+    openBtn.onclick = () => (modal.style.display = "flex");
+    closeBtn.onclick = () => (modal.style.display = "none");
+
+    window.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
+
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach((q) => {
+      q.addEventListener("click", () => {
+        const currentAnswer = q.nextElementSibling;
+        const isOpen = currentAnswer.style.maxHeight;
+
+        document.querySelectorAll(".faq-answer").forEach((ans) => {
+          ans.style.maxHeight = null;
+        });
+        document.querySelectorAll(".faq-question").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        if (isOpen) {
+          currentAnswer.style.maxHeight = null;
+          q.classList.remove("active");
+          return;
+        }
+        currentAnswer.style.maxHeight = currentAnswer.scrollHeight + "px";
+        q.classList.add("active");
+      });
+    });
+
+
+
+
+
+    function startTypingEffect(el) {
+      const t = el.innerText;
+      let i = 0,
+        del = false;
+      el.innerText = "";
+
+      (function loop() {
+        if (!del && i < t.length) {
+          el.innerText += t[i++];
+          return setTimeout(loop, 40);
+        }
+        if (!del && i === t.length) {
+          del = true;
+          return setTimeout(loop, 3000);
+        }
+        if (del && i > 0) {
+          el.innerText = t.slice(0, --i);
+          return setTimeout(loop, 20);
+        }
+        del = false;
+        setTimeout(loop, 500);
+      })();
+    }
+
+    document.querySelectorAll(".typing-effect").forEach(startTypingEffect);
+  </script>
+</body>
+
+</html>
